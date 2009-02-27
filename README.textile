@@ -1,0 +1,13 @@
+h1. Hoptoad API
+
+An unofficial Ruby library for interacting with the "Hoptoad API":http://hoptoadapp.com/pages/api
+
+h2. Requirements
+
+* ActiveResource 
+* ActiveSupport
+
+h2. Acknowledgements
+
+* "Hoptoad":http://hoptoadapp.com
+* "Lighthouse-api":http://github.com/Caged/lighthouse-api (inspiration for much of this code)
