@@ -2,6 +2,23 @@ h1. Hoptoad API
 
 An unofficial Ruby library for interacting with the "Hoptoad API":http://hoptoadapp.com/pages/api
 
+h2. Usage
+
+<pre>
+<code>
+Hoptoad.account = 'myaccount'
+Hoptoad.token = 'abcdeghijklmnopqrstuvwxyz'
+
+# find an individual error:
+Hoptoad.find(12345)
+
+# or get a list of errors using:
+Hoptoad.find(:all)
+Hoptoad::Error.find(:all, :params => { :page => 2 })
+</code>
+</pre>
+
+
 h2. Requirements
 
 * ActiveResource 
