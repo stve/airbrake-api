@@ -3,4 +3,3 @@
 coverage
 *.gem
 pkg/*
-*.gemspec
