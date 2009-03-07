@@ -63,7 +63,7 @@ module Hoptoad
       @resources ||= []
     end
   end
-  
+
   self.host_format   = '%s://%s%s'
   self.domain_format = '%s.hoptoadapp.com'
   self.protocol      = 'http'
@@ -74,20 +74,20 @@ module Hoptoad
       Hoptoad.resources << base
       class << base
         attr_accessor :site_format
-        
+
         def append_auth_token_to_params(*arguments)
           opts = arguments.last.is_a?(Hash) ? arguments.pop : {}
           opts = opts.has_key?(:params) ? opts : opts.merge(:params => {})
           opts[:params] = opts[:params].merge(:auth_token => Hoptoad.token)
           arguments << opts
           arguments
-        end        
+        end
       end
       base.site_format = '%s'
       super
     end
   end
-  
+
   # Find errors
   #
   #   Errors are paginated. You get 25 at a time.
@@ -98,16 +98,16 @@ module Hoptoad
   #   Hoptoad::Error.find(44) 
   #
   class Error < Base
-    
+
     # find using token
     def self.find(*arguments)
       raise HoptoadError.new('API Token cannot be nil') if Hoptoad.token.blank?
       raise HoptoadError.new('Account cannot be nil') if Hoptoad.account.blank?
-      
+
       arguments = append_auth_token_to_params(*arguments)
       super(*arguments)
-    end  
-    
+    end
+
     # produces the url on hoptoad's site
     def url
       path = Error.site.to_s
@@ -116,7 +116,7 @@ module Hoptoad
       path << '/'
       path << self.id.to_s
     end
-    
+
   end
 
 end
