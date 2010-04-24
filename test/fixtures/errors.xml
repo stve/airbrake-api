@@ -1,0 +1,545 @@
+HTTP/1.1 200 OK
+
+<?xml version="1.0" encoding="UTF-8"?>
+<groups type="array">
+  <group>
+    <action>index</action>
+    <controller>shades</controller>
+    <created-at type="datetime">2010-04-16T21:45:30Z</created-at>
+    <error-class>ActiveRecord::StatementInvalid</error-class>
+    <error-message>ActiveRecord::StatementInvalid: Mysql::Error: Unknown column 'otype' in 'order clause': SELECT shades.id, shades.member_id, shades.equity_id, shades.etype, shades.shade_type, shade_features.shade_id, shade_features.price_in_cents, shade_features.tra</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb</file>
+    <id type="integer">1696170</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">219</line-number>
+    <most-recent-notice-at type="datetime">2010-04-24T02:27:11Z</most-recent-notice-at>
+    <notice-hash>71ce436b9c091d468daf479eeee4b216</notice-hash>
+    <notices-count type="integer">455</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-24T02:27:11Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>member_ballots</controller>
+    <created-at type="datetime">2010-04-16T20:19:25Z</created-at>
+    <error-class>ActiveRecord::StatementInvalid</error-class>
+    <error-message>ActiveRecord::StatementInvalid: Mysql::Error: Unknown column 'group_count' in 'order clause': SELECT `members`.* FROM `members` right join member_ballots on member_ballots.member_id = members.id WHERE (member_ballots.posting_id = 4703) ORDER BY `group_cou</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb</file>
+    <id type="integer">1695879</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">219</line-number>
+    <most-recent-notice-at type="datetime">2010-04-24T02:25:41Z</most-recent-notice-at>
+    <notice-hash>8e80ee8d42a6922f28d936eb25b1203e</notice-hash>
+    <notices-count type="integer">895</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-24T02:25:41Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>shade_notes</controller>
+    <created-at type="datetime">2010-04-17T02:21:58Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `timezone_adjusted_shaded_at' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/app/helpers/application_helper.rb</file>
+    <id type="integer">1696798</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">48</line-number>
+    <most-recent-notice-at type="datetime">2010-04-24T02:20:32Z</most-recent-notice-at>
+    <notice-hash>5802da99c915c425c22799e68a208144</notice-hash>
+    <notices-count type="integer">36</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-24T02:20:32Z</updated-at>
+  </group>
+  <group>
+    <action>show</action>
+    <controller>company</controller>
+    <created-at type="datetime">2010-04-16T21:54:58Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `name' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/app/views/company/show.html.erb</file>
+    <id type="integer">1696205</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">23</line-number>
+    <most-recent-notice-at type="datetime">2010-04-24T00:07:15Z</most-recent-notice-at>
+    <notice-hash>7544a3924645e8dab5c1a2c1151bc5b2</notice-hash>
+    <notices-count type="integer">188</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-24T00:04:57Z</updated-at>
+  </group>
+  <group>
+    <action>show</action>
+    <controller>company</controller>
+    <created-at type="datetime">2010-04-17T02:33:36Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `name' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/app/views/company/show.html.erb</file>
+    <id type="integer">1696825</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">46</line-number>
+    <most-recent-notice-at type="datetime">2010-04-24T00:05:35Z</most-recent-notice-at>
+    <notice-hash>c03c3f98fbfdb69fb35ec297b49d11ad</notice-hash>
+    <notices-count type="integer">34</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-24T00:05:35Z</updated-at>
+  </group>
+  <group>
+    <action>create</action>
+    <controller>shade_notes</controller>
+    <created-at type="datetime">2010-04-22T19:22:22Z</created-at>
+    <error-class>ArgumentError</error-class>
+    <error-message>ArgumentError: Invalid currency amount</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/gems/money-2.1.5/lib/money/core_extensions.rb</file>
+    <id type="integer">1723207</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">116</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T23:13:26Z</most-recent-notice-at>
+    <notice-hash>e8590fb8e52d9030727f96b83727141a</notice-hash>
+    <notices-count type="integer">2</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T23:13:26Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>topics</controller>
+    <created-at type="datetime">2010-04-17T18:35:21Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `name' for false:FalseClass</error-message>
+    <file>/data/myapp/releases/20100416200739/app/controllers/topics_controller.rb</file>
+    <id type="integer">1698293</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">20</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T22:40:43Z</most-recent-notice-at>
+    <notice-hash>8f12dc095d158b4ed87576587a20fc2a</notice-hash>
+    <notices-count type="integer">11</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T22:40:43Z</updated-at>
+  </group>
+  <group>
+    <action>display_name</action>
+    <controller>settings</controller>
+    <created-at type="datetime">2010-04-23T19:02:51Z</created-at>
+    <error-class>AASM::InvalidTransition</error-class>
+    <error-message>AASM::InvalidTransition: Event 'publish' cannot transition from 'published'</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/gems/gvaughn-aasm-2.0.4/lib/event.rb</file>
+    <id type="integer">1728364</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">17</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T19:03:14Z</most-recent-notice-at>
+    <notice-hash>a001037e72d28cb4fe0beca2c065f368</notice-hash>
+    <notices-count type="integer">2</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T19:02:52Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>topics</controller>
+    <created-at type="datetime">2010-04-17T01:44:56Z</created-at>
+    <error-class>RuntimeError</error-class>
+    <error-message>RuntimeError: "NilClass"</error-message>
+    <file>/data/myapp/releases/20100416200739/app/helpers/tk_urls_helper.rb</file>
+    <id type="integer">1696722</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">74</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T18:00:25Z</most-recent-notice-at>
+    <notice-hash>8ef369d7bcdd984101e321c3b83a5696</notice-hash>
+    <notices-count type="integer">51</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T18:00:25Z</updated-at>
+  </group>
+  <group>
+    <action>update</action>
+    <controller>admin/moderate</controller>
+    <created-at type="datetime">2010-04-19T14:46:26Z</created-at>
+    <error-class>ActiveRecord::StaleObjectError</error-class>
+    <error-message>ActiveRecord::StaleObjectError: Attempted to update a stale object</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/locking/optimistic.rb</file>
+    <id type="integer">1703705</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">89</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T17:57:22Z</most-recent-notice-at>
+    <notice-hash>05eea39bd5b059fe99b877ad87b99729</notice-hash>
+    <notices-count type="integer">5</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T17:57:22Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>welcome</controller>
+    <created-at type="datetime">2010-04-16T20:49:36Z</created-at>
+    <error-class>ActionView::MissingTemplate</error-class>
+    <error-message>ActionView::MissingTemplate: Missing template welcome/_what_we_shade.erb in view path app/views</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_view/paths.rb</file>
+    <id type="integer">1695982</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">66</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T17:44:24Z</most-recent-notice-at>
+    <notice-hash>b937b06951264480a538c1a0727066ae</notice-hash>
+    <notices-count type="integer">24</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T17:44:24Z</updated-at>
+  </group>
+  <group>
+    <action>edit_follows</action>
+    <controller>dashboard</controller>
+    <created-at type="datetime">2010-04-20T16:26:41Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `each' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/app/controllers/dashboard_controller.rb</file>
+    <id type="integer">1711098</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">49</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T17:40:06Z</most-recent-notice-at>
+    <notice-hash>6d9f6fdd171263da486f92f34ad314ee</notice-hash>
+    <notices-count type="integer">7</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T17:40:06Z</updated-at>
+  </group>
+  <group>
+    <action></action>
+    <controller></controller>
+    <created-at type="datetime">2010-04-19T23:17:54Z</created-at>
+    <error-class>ActionController::MethodNotAllowed</error-class>
+    <error-message>ActionController::MethodNotAllowed: Only get, put, and delete requests are allowed.</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/routing/recognition_optimisation.rb</file>
+    <id type="integer">1706890</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">64</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T15:51:53Z</most-recent-notice-at>
+    <notice-hash>697a16d98f9cd4dfc7e3390153f2534c</notice-hash>
+    <notices-count type="integer">5</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T15:51:53Z</updated-at>
+  </group>
+  <group>
+    <action>show</action>
+    <controller>forums</controller>
+    <created-at type="datetime">2010-04-18T20:40:30Z</created-at>
+    <error-class>RuntimeError</error-class>
+    <error-message>RuntimeError: "NilClass"</error-message>
+    <file>/data/myapp/releases/20100416200739/app/helpers/tk_urls_helper.rb</file>
+    <id type="integer">1700827</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">74</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T13:25:09Z</most-recent-notice-at>
+    <notice-hash>8558b4ce7124c6f9a213ba361ed1a5d3</notice-hash>
+    <notices-count type="integer">12</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T13:25:09Z</updated-at>
+  </group>
+  <group>
+    <action>shades_only</action>
+    <controller>trading_activity</controller>
+    <created-at type="datetime">2010-04-18T06:52:59Z</created-at>
+    <error-class>ActionView::MissingTemplate</error-class>
+    <error-message>ActionView::MissingTemplate: Missing template trading_activity/shades_only.erb in view path app/views</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_view/paths.rb</file>
+    <id type="integer">1699397</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">66</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T13:03:08Z</most-recent-notice-at>
+    <notice-hash>7260ebbbb0102c25cf35e61c29ab433e</notice-hash>
+    <notices-count type="integer">25</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T13:03:08Z</updated-at>
+  </group>
+  <group>
+    <action>choose_name</action>
+    <controller>registration</controller>
+    <created-at type="datetime">2010-04-19T02:04:23Z</created-at>
+    <error-class>AASM::InvalidTransition</error-class>
+    <error-message>AASM::InvalidTransition: Event 'publish' cannot transition from 'published'</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/gems/gvaughn-aasm-2.0.4/lib/event.rb</file>
+    <id type="integer">1701377</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">17</line-number>
+    <most-recent-notice-at type="datetime">2010-04-23T02:51:25Z</most-recent-notice-at>
+    <notice-hash>850b802e136b07e289d84fddd8d7fca9</notice-hash>
+    <notices-count type="integer">11</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-23T02:51:19Z</updated-at>
+  </group>
+  <group>
+    <action>show</action>
+    <controller>blogs</controller>
+    <created-at type="datetime">2010-04-17T03:14:21Z</created-at>
+    <error-class>ArgumentError</error-class>
+    <error-message>ArgumentError: argument is an invalid Member object</error-message>
+    <file>/data/myapp/releases/20100416200739/app/models/comment.rb</file>
+    <id type="integer">1696899</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">68</line-number>
+    <most-recent-notice-at type="datetime">2010-04-22T20:32:57Z</most-recent-notice-at>
+    <notice-hash>c321d001a83fe2df9a0c38cce734bb4b</notice-hash>
+    <notices-count type="integer">32</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-22T20:32:57Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>members</controller>
+    <created-at type="datetime">2010-04-22T13:45:59Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `pluralize' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/lib/standalone_link_renderer.rb</file>
+    <id type="integer">1721478</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">23</line-number>
+    <most-recent-notice-at type="datetime">2010-04-22T13:45:59Z</most-recent-notice-at>
+    <notice-hash>40dceaf757049b758327f81e8f9cef9e</notice-hash>
+    <notices-count type="integer">1</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-22T13:45:59Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>members</controller>
+    <created-at type="datetime">2010-04-17T20:14:27Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `field_specs' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/lib/filter_helper.rb</file>
+    <id type="integer">1698489</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">116</line-number>
+    <most-recent-notice-at type="datetime">2010-04-22T11:30:02Z</most-recent-notice-at>
+    <notice-hash>dee5055845a1f738a9c86f3fd70bb19b</notice-hash>
+    <notices-count type="integer">2</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-22T11:30:02Z</updated-at>
+  </group>
+  <group>
+    <action>followers</action>
+    <controller>subscriptions</controller>
+    <created-at type="datetime">2010-04-19T22:20:59Z</created-at>
+    <error-class>NameError</error-class>
+    <error-message>NameError: uninitialized constant SubscriptionsController</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/activesupport/lib/active_support/dependencies.rb</file>
+    <id type="integer">1706545</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">443</line-number>
+    <most-recent-notice-at type="datetime">2010-04-22T08:28:09Z</most-recent-notice-at>
+    <notice-hash>32992aac8be6024e6f5783c12e7b6fac</notice-hash>
+    <notices-count type="integer">13</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-22T08:28:09Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>topics</controller>
+    <created-at type="datetime">2010-04-17T02:59:11Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `slug' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/app/controllers/topics_controller.rb</file>
+    <id type="integer">1696865</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">46</line-number>
+    <most-recent-notice-at type="datetime">2010-04-22T05:37:29Z</most-recent-notice-at>
+    <notice-hash>06b34874dd1edf6b90e223702f26a6ec</notice-hash>
+    <notices-count type="integer">72</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-22T05:25:05Z</updated-at>
+  </group>
+  <group>
+    <action>positions</action>
+    <controller>dashboard</controller>
+    <created-at type="datetime">2010-04-21T16:07:14Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `headline' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/app/views/dashboard/_positions_table.html.erb</file>
+    <id type="integer">1716777</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">3</line-number>
+    <most-recent-notice-at type="datetime">2010-04-21T16:07:14Z</most-recent-notice-at>
+    <notice-hash>e4f7d77be6a6cc86924bf66023a8c37f</notice-hash>
+    <notices-count type="integer">1</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-21T16:07:14Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>forum_posts</controller>
+    <created-at type="datetime">2010-04-19T16:15:33Z</created-at>
+    <error-class>WillPaginate::InvalidPage</error-class>
+    <error-message>WillPaginate::InvalidPage: "http://www.laborpascoperu.org.pe/envio11.txt?" given as value, which translates to '0' as page number</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/gems/will_paginate-2.2.2/lib/will_paginate/collection.rb</file>
+    <id type="integer">1704224</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">51</line-number>
+    <most-recent-notice-at type="datetime">2010-04-21T15:04:26Z</most-recent-notice-at>
+    <notice-hash>bc870c86d74a7b43ee1ecffb154aad9c</notice-hash>
+    <notices-count type="integer">2</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-21T15:04:26Z</updated-at>
+  </group>
+  <group>
+    <action>update</action>
+    <controller>admin/moderate</controller>
+    <created-at type="datetime">2010-04-17T01:59:37Z</created-at>
+    <error-class>AASM::InvalidTransition</error-class>
+    <error-message>AASM::InvalidTransition: Event 'approve' cannot transition from 'removed'</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/gems/gvaughn-aasm-2.0.4/lib/event.rb</file>
+    <id type="integer">1696758</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">17</line-number>
+    <most-recent-notice-at type="datetime">2010-04-21T01:45:26Z</most-recent-notice-at>
+    <notice-hash>1e17db05793e2bb697aabb926c39f0b3</notice-hash>
+    <notices-count type="integer">4</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-21T01:45:26Z</updated-at>
+  </group>
+  <group>
+    <action>show</action>
+    <controller>tags</controller>
+    <created-at type="datetime">2010-04-20T08:14:34Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `shaded_at' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/app/views/shade_notes/_shade_note.html.erb</file>
+    <id type="integer">1708892</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">20</line-number>
+    <most-recent-notice-at type="datetime">2010-04-20T08:14:34Z</most-recent-notice-at>
+    <notice-hash>f404dcac7ce0e7c06c40cc9b7a07af3a</notice-hash>
+    <notices-count type="integer">1</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-20T08:14:34Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>subscriptions</controller>
+    <created-at type="datetime">2010-04-19T20:56:46Z</created-at>
+    <error-class>NameError</error-class>
+    <error-message>NameError: uninitialized constant SubscriptionsController</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/activesupport/lib/active_support/dependencies.rb</file>
+    <id type="integer">1705954</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">443</line-number>
+    <most-recent-notice-at type="datetime">2010-04-19T23:31:54Z</most-recent-notice-at>
+    <notice-hash>b6a802f25d9de887fd7ec24e735494fe</notice-hash>
+    <notices-count type="integer">9</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-19T23:31:54Z</updated-at>
+  </group>
+  <group>
+    <action>unfollow</action>
+    <controller>shade_notes</controller>
+    <created-at type="datetime">2010-04-19T20:39:30Z</created-at>
+    <error-class>ActionView::MissingTemplate</error-class>
+    <error-message>ActionView::MissingTemplate: Missing template shade_notes/unfollow.erb in view path app/views</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_view/paths.rb</file>
+    <id type="integer">1705850</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">66</line-number>
+    <most-recent-notice-at type="datetime">2010-04-19T20:39:30Z</most-recent-notice-at>
+    <notice-hash>b94660cab19f29057c4fcd94c3c5c48b</notice-hash>
+    <notices-count type="integer">1</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-19T20:39:30Z</updated-at>
+  </group>
+  <group>
+    <action>show</action>
+    <controller>tags</controller>
+    <created-at type="datetime">2010-04-19T03:59:56Z</created-at>
+    <error-class>NoMethodError</error-class>
+    <error-message>NoMethodError: undefined method `equity' for nil:NilClass</error-message>
+    <file>/data/myapp/releases/20100416200739/app/views/shade_notes/_shade_note.html.erb</file>
+    <id type="integer">1701733</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">12</line-number>
+    <most-recent-notice-at type="datetime">2010-04-19T10:45:52Z</most-recent-notice-at>
+    <notice-hash>82fe9e4b12b7dbce23ae3f1936ecb5d7</notice-hash>
+    <notices-count type="integer">2</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-19T10:45:52Z</updated-at>
+  </group>
+  <group>
+    <action>display_name</action>
+    <controller>settings</controller>
+    <created-at type="datetime">2010-04-18T20:54:44Z</created-at>
+    <error-class>ActiveRecord::StaleObjectError</error-class>
+    <error-message>ActiveRecord::StaleObjectError: Attempted to update a stale object</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/locking/optimistic.rb</file>
+    <id type="integer">1700843</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">89</line-number>
+    <most-recent-notice-at type="datetime">2010-04-18T20:54:44Z</most-recent-notice-at>
+    <notice-hash>43175a902ce471d659b1c7dde0d1737f</notice-hash>
+    <notices-count type="integer">1</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-18T20:54:44Z</updated-at>
+  </group>
+  <group>
+    <action>display_name</action>
+    <controller>settings</controller>
+    <created-at type="datetime">2010-04-18T20:54:44Z</created-at>
+    <error-class>ActiveRecord::StaleObjectError</error-class>
+    <error-message>ActiveRecord::StaleObjectError: Attempted to update a stale object</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/locking/optimistic.rb</file>
+    <id type="integer">1700843</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">89</line-number>
+    <most-recent-notice-at type="datetime">2010-04-18T20:54:44Z</most-recent-notice-at>
+    <notice-hash>43175a902ce471d659b1c7dde0d1737f</notice-hash>
+    <notices-count type="integer">1</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-18T20:54:44Z</updated-at>
+  </group>
+</groups>

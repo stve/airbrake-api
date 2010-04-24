@@ -1,0 +1,41 @@
+HTTP/1.1 200 OK
+
+<?xml version="1.0" encoding="UTF-8"?>
+<groups type="array">
+  <group>
+    <action>index</action>
+    <controller>shades</controller>
+    <created-at type="datetime">2010-04-16T21:45:30Z</created-at>
+    <error-class>ActiveRecord::StatementInvalid</error-class>
+    <error-message>ActiveRecord::StatementInvalid: Mysql::Error: Unknown column 'otype' in 'order clause': SELECT shades.id, shades.member_id, shades.equity_id, shades.etype, shades.shade_type, shade_executions.shade_id, shade_executions.price_in_cents, shade_executions.tra</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb</file>
+    <id type="integer">1696170</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">219</line-number>
+    <most-recent-notice-at type="datetime">2010-04-24T02:27:11Z</most-recent-notice-at>
+    <notice-hash>71ce436b9c091d468daf479eeee4b216</notice-hash>
+    <notices-count type="integer">455</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-24T02:27:11Z</updated-at>
+  </group>
+  <group>
+    <action>index</action>
+    <controller>member_ballots</controller>
+    <created-at type="datetime">2010-04-16T20:19:25Z</created-at>
+    <error-class>ActiveRecord::StatementInvalid</error-class>
+    <error-message>ActiveRecord::StatementInvalid: Mysql::Error: Unknown column 'group_count' in 'order clause': SELECT `members`.* FROM `members` right join member_ballots on member_ballots.member_id = members.id WHERE (member_ballots.posting_id = 4703) ORDER BY `group_cou</error-message>
+    <file>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb</file>
+    <id type="integer">1695879</id>
+    <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+    <line-number type="integer">219</line-number>
+    <most-recent-notice-at type="datetime">2010-04-24T02:25:41Z</most-recent-notice-at>
+    <notice-hash>8e80ee8d42a6922f28d936eb25b1203e</notice-hash>
+    <notices-count type="integer">895</notices-count>
+    <project-id type="integer">248</project-id>
+    <rails-env>production</rails-env>
+    <resolved type="boolean">false</resolved>
+    <updated-at type="datetime">2010-04-24T02:25:41Z</updated-at>
+  </group>
+</groups>
