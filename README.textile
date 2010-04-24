@@ -1,6 +1,7 @@
 h1. Hoptoad API
 
 An unofficial Ruby library for interacting with the "Hoptoad API":http://hoptoadapp.com/pages/api
+"Hoptoad-2 API":http://help.hoptoadapp.com/faqs/api-2/api-overview
 
 h2. Usage
 
@@ -14,7 +15,7 @@ Hoptoad::Error.find(12345)
 
 # or get a list of errors using:
 Hoptoad::Error.find(:all)
-Hoptoad::Error.find(:all, :params => { :page => 2 })
+Hoptoad::Error.find(:all, { :page => 2 })
 </code>
 </pre>
 
@@ -27,4 +28,3 @@ h2. Requirements
 h2. Acknowledgements
 
 * "Hoptoad":http://hoptoadapp.com
-* "Lighthouse-api":http://github.com/Caged/lighthouse-api (inspiration for much of this code)
