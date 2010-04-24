@@ -19,7 +19,6 @@ Gem::Specification.new do |s|
     ".gitignore",
      "README.textile",
      "Rakefile",
-     "VERSION.yml",
      "hoptoad-api.gemspec",
      "lib/hoptoad-api.rb",
      "lib/hoptoad-api/client.rb",
