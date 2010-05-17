@@ -3,6 +3,7 @@ require 'httparty'
 
 module Hoptoad
   extend self
+  attr_accessor :secure
   
   class HoptoadError < StandardError; end
   
@@ -11,7 +12,7 @@ module Hoptoad
   end
   
   def account
-    "http://#{@account}.hoptoadapp.com"
+    "#{protocol}://#{@account}.hoptoadapp.com"
   end
   
   def auth_token=(token)
@@ -21,6 +22,11 @@ module Hoptoad
   def auth_token
     @auth_token
   end
+  
+  def protocol
+    secure ? "https" : "http"
+  end
+  
 end
 
 require 'hoptoad-api/version'

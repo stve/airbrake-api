@@ -88,7 +88,9 @@ module Hoptoad
     def self.find_individual(args)
       id = args.shift
       options = args.extract_options!
-      Hashie::Mash.new(get("#{@@individual_collection_path}#{id}.xml", { :query => options }))
+      hash = Hashie::Mash.new(response = get("#{@@individual_collection_path}#{id}.xml", { :query => options }))
+      raise HoptoadError.new('SSL should be enabled - use Hoptoad.secure = true in configuration') if response.code == 403
+      hash
     end
 
   end
