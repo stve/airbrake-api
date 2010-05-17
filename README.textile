@@ -8,7 +8,8 @@ h2. Usage
 <pre>
 <code>
 Hoptoad.account = 'myaccount'
-Hoptoad.token = 'abcdeghijklmnopqrstuvwxyz'
+Hoptoad.auth_token = 'abcdeghijklmnopqrstuvwxyz'
+Hoptoad.secure = true # if your account is SSL enabled
 
 # find an individual error:
 Hoptoad::Error.find(12345)
