@@ -28,17 +28,8 @@ module Hoptoad
     include HTTParty
     format :xml
   
-    # cattr_accessor :collection_path, :individual_collection_path
-  
     @@collection_path = '/errors.xml'
     @@individual_collection_path = '/errors/'
-  
-    # def initialize
-    #   self.class.base_uri "http://#{account}.hoptoadapp.com"
-    #   self.class.default_params :auth_token => token
-    # 
-    # 
-    # end
     
     def self.collection_path
       @@collection_path
@@ -58,8 +49,6 @@ module Hoptoad
         else
           raise HoptoadError.new('Invalid argument')
       end
-      
-      # puts results.inspect
     
       raise HoptoadError.new('No results found.') if results.nil?
       raise HoptoadError.new(results.errors.error) if results.errors

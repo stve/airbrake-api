@@ -23,8 +23,8 @@ Hoptoad::Error.find(:all, { :page => 2 })
 
 h2. Requirements
 
-* ActiveResource 
-* ActiveSupport
+* HTTParty
+* Hashie
 
 h2. Acknowledgements
 
