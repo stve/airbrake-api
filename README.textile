@@ -1,7 +1,6 @@
 h1. Hoptoad API
 
 An unofficial Ruby library for interacting with the "Hoptoad API":http://hoptoadapp.com/pages/api
-"Hoptoad-2 API":http://help.hoptoadapp.com/faqs/api-2/api-overview
 
 h2. Usage
 
