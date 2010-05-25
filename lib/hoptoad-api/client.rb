@@ -26,6 +26,14 @@
 #
 #   find individual error by ID
 #   Hoptoad::Error.find(44) 
+#
+# Find *all* notices by error_id
+#
+#   notices = Hoptoad::Notice.all(1234) # 1234 == error id
+#
+# Find notice by id + error_id
+#
+#   notice = Hoptoad::Notice.find(12345, 1234) # 12345 == notice id, 1234 == error id
 
 module Hoptoad
   class Base
@@ -44,6 +52,15 @@ module Hoptoad
     def self.check_configuration
       raise HoptoadError.new('API Token cannot be nil') if default_options.nil? || default_options[:default_params].nil? || !default_options[:default_params].has_key?(:auth_token)
       raise HoptoadError.new('Account cannot be nil') unless default_options.has_key?(:base_uri)
+    end
+    
+    def self.fetch(path, options)
+      response = get(path, { :query => options })
+      if response.code == 403
+        raise HoptoadError.new('SSL should be enabled - use Hoptoad.secure = true in configuration')
+      end
+      
+      Hashie::Mash.new(response)
     end
 
   end
@@ -78,15 +95,15 @@ module Hoptoad
 
     def self.find_all(args)
       options = args.extract_options!
-      Hashie::Mash.new(get(collection_path, { :query => options }))
+      
+      fetch(collection_path, options)
     end
 
     def self.find_individual(args)
       id = args.shift
       options = args.extract_options!
-      hash = Hashie::Mash.new(response = get(error_path(id), { :query => options }))
-      raise HoptoadError.new('SSL should be enabled - use Hoptoad.secure = true in configuration') if response.code == 403
-      hash
+
+      fetch(error_path(id), options)
     end
 
     def self.collection_path
@@ -99,4 +116,62 @@ module Hoptoad
 
   end
 
+  class Notice < Base
+
+    def self.find(id, error_id, options={})
+      setup
+      
+      hash = fetch(find_path(id, error_id), options)
+      
+      if hash.errors
+        raise HoptoadError.new(results.errors.error)
+      end
+      
+      hash.notice
+    end
+    
+    def self.find_all_by_error_id(error_id)
+      setup
+      
+      options = {}
+      notices = []
+      page = 1
+      while true
+        options[:page] = page
+        hash = fetch(all_path(error_id), options)
+        if hash.errors
+          raise HoptoadError.new(results.errors.error)
+        end
+        notice_stubs = hash.notices
+        
+        notice_stubs.map do |notice|
+          notices << find(notice.id, error_id)
+        end
+        break if notice_stubs.size < 30
+        page += 1
+      end
+      notices
+    end
+
+    def self.find_by_error_id(error_id, options={ 'page' => 1})
+      setup
+      
+      hash = fetch(all_path(error_id), options)
+      if hash.errors
+        raise HoptoadError.new(results.errors.error)
+      end
+      
+      hash.notices
+    end
+
+    private
+
+    def self.find_path(id, error_id)
+      "/errors/#{error_id}/notices/#{id}.xml"
+    end
+
+    def self.all_path(error_id)
+      "/errors/#{error_id}/notices.xml"
+    end
+  end
 end

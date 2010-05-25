@@ -1,0 +1,101 @@
+HTTP/1.1 200 OK
+
+<?xml version="1.0" encoding="UTF-8"?>
+<notices type="array">
+  <notice>
+    <created-at type="datetime">2010-05-21T10:31:41Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-21T10:31:41Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-21T05:22:47Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-21T05:22:47Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T23:54:26Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T23:54:26Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T17:38:06Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T17:38:06Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T11:08:22Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T11:08:22Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T11:07:09Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T11:07:09Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T11:05:02Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T11:05:02Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T11:04:50Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T11:04:50Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T07:45:50Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T07:45:50Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T05:07:31Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T05:07:31Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T04:43:33Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T04:43:33Z</updated-at>
+  </notice>
+  <notice>
+    <created-at type="datetime">2010-05-20T04:43:15Z</created-at>
+    <error-message>NoMethodError: undefined method `oh_no_not_that' for nil:NilClass</error-message>
+    <group-id type="integer">1696170</group-id>
+    <id type="integer">1234</id>
+    <project-id type="integer">248</project-id>
+    <updated-at type="datetime">2010-05-20T04:43:15Z</updated-at>
+  </notice>
+</notices>
