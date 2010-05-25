@@ -13,6 +13,10 @@ class HoptoadTest < Test::Unit::TestCase
       assert_equal "/errors.xml", Hoptoad::Error.collection_path
     end
     
+    should "generate correct error path given an id" do
+      assert_equal "/errors/1234.xml", Hoptoad::Error.error_path(1234)
+    end
+    
     should "find a page of the 30 most recent errors" do
       errors = Hoptoad::Error.find(:all)
       ordered = errors.sort_by(&:most_recent_notice_at).reverse

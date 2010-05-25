@@ -1,4 +1,4 @@
-# Ruby lib for working with the Hoptoad API's XML interface.  
+# Ruby lib for working with the Hoptoad API's XML interface.
 # The first thing you need to set is the account name.  This is the same
 # as the web address for your account.
 #
@@ -6,9 +6,13 @@
 #
 # Then, you should set the authentication token.
 #
-#   Hoptoad.token = 'abcdefg'
+#   Hoptoad.auth_token = 'abcdefg'
 #
 # If no token or authentication info is given, a HoptoadError exception will be raised.
+#
+# If your account uses ssl then turn it on:
+#
+#   Hoptoad.secure = true
 #
 # For more details, check out the hoptoad docs at http://hoptoadapp.com/pages/api.
 #
@@ -28,11 +32,12 @@ module Hoptoad
     include HTTParty
     format :xml
   
-    @@collection_path = '/errors.xml'
-    @@individual_collection_path = '/errors/'
-    
     def self.collection_path
-      @@collection_path
+      '/errors.xml'
+    end
+    
+    def self.error_path(error_id)
+      "/errors/#{error_id}.xml"
     end
   
     def self.find(*args)
@@ -58,8 +63,8 @@ module Hoptoad
   
     def self.update(error, options)
       check_configuration
-    
-      self.class.put("#{@collection_path}", options)
+
+      self.class.put(collection_path, options)
     end
   
     private
@@ -71,13 +76,13 @@ module Hoptoad
   
     def self.find_all(args)
       options = args.extract_options!
-      Hashie::Mash.new(get("#{@@collection_path}", { :query => options }))
+      Hashie::Mash.new(get(collection_path, { :query => options }))
     end
   
     def self.find_individual(args)
       id = args.shift
       options = args.extract_options!
-      hash = Hashie::Mash.new(response = get("#{@@individual_collection_path}#{id}.xml", { :query => options }))
+      hash = Hashie::Mash.new(response = get(error_path(id), { :query => options }))
       raise HoptoadError.new('SSL should be enabled - use Hoptoad.secure = true in configuration') if response.code == 403
       hash
     end
