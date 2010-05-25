@@ -28,3 +28,8 @@ h2. Requirements
 h2. Acknowledgements
 
 * "Hoptoad":http://hoptoadapp.com
+
+h2. Contributors
+
+Matias Käkelä (SSL Support)
+Jordan Brough (Notices)
