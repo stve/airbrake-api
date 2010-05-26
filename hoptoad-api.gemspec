@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{hoptoad-api}
-  s.version = "2.0.1"
+  s.version = "2.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Steve Agalloco"]
-  s.date = %q{2010-05-17}
+  s.date = %q{2010-05-26}
   s.description = %q{An unofficial gem for interacting with the Hoptoad API}
   s.email = %q{steve.agalloco@gmail.com}
   s.extra_rdoc_files = [
@@ -26,14 +26,17 @@ Gem::Specification.new do |s|
      "lib/hoptoad-api/version.rb",
      "test/fixtures/errors.xml",
      "test/fixtures/individual_error.xml",
+     "test/fixtures/individual_notice.xml",
+     "test/fixtures/notices.xml",
      "test/fixtures/paginated_errors.xml",
+     "test/fixtures/paginated_notices.xml",
      "test/test_helper.rb",
      "test/test_hoptoad-api.rb"
   ]
   s.homepage = %q{http://github.com/spagalloco/hoptoad-api}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.5}
+  s.rubygems_version = %q{1.3.6}
   s.summary = %q{An unofficial gem for interacting with the Hoptoad API}
   s.test_files = [
     "test/test_helper.rb",
