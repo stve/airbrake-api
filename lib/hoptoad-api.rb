@@ -3,24 +3,18 @@ require 'httparty'
 
 module Hoptoad
   extend self
-  attr_accessor :secure
+  attr_accessor :account, :auth_token, :secure
 
   class HoptoadError < StandardError; end
 
-  def account=(account)
-    @account = account
+  def configure(options={})
+    @account = options[:account] if options.has_key?(:account)
+    @auth_token = options[:auth_token] if options.has_key?(:auth_token)
+    @secure = options[:secure] if options.has_key?(:secure)
   end
 
-  def account
+  def account_path
     "#{protocol}://#{@account}.hoptoadapp.com"
-  end
-
-  def auth_token=(token)
-    @auth_token = token
-  end
-
-  def auth_token
-    @auth_token
   end
 
   def protocol
