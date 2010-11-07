@@ -1,5 +1,6 @@
-require 'rubygems'
 require 'rake'
+require 'bundler'
+Bundler::GemHelper.install_tasks
 
 $:.unshift 'lib'
 require 'hoptoad-api/version'
