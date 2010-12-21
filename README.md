@@ -1,35 +1,58 @@
-h1. Hoptoad API
+Hoptoad API
+===========
 
-An unofficial Ruby library for interacting with the "Hoptoad API":http://hoptoadapp.com/pages/api
+An unofficial Ruby library for interacting with the [Hoptoad API](http://hoptoadapp.com/pages/api)
 
-h2. Usage
+Usage
+-----
 
-<pre>
-<code>
-Hoptoad.account = 'myaccount'
-Hoptoad.auth_token = 'abcdeghijklmnopqrstuvwxyz'
-Hoptoad.secure = true # if your account is SSL enabled
+The first thing you need to set is the account name.  This is the same as the web address for your account.
 
-# find an individual error:
-Hoptoad::Error.find(12345)
+    Hoptoad.account = 'myaccount'
 
-# or get a list of errors using:
-Hoptoad::Error.find(:all)
-Hoptoad::Error.find(:all, { :page => 2 })
-</code>
-</pre>
+Then, you should set the authentication token.
+
+    Hoptoad.auth_token = 'abcdefg'
+
+If your account uses ssl then turn it on:
+
+    Hoptoad.secure = true
+
+Optionally, you can configure through a single method:
+
+    Hoptoad.configure(:account => 'anapp', :auth_token => 'abcdefg', :secure => true)
+
+Once you've configured authentication, you can make calls against the API.  If no token or authentication is given, a HoptoadError exception will be raised.
+
+Finding Errors
+--------------
+
+Errors are paginated, the API responds with 25 at a time, pass an optional params hash for additional pages:
+
+    Hoptoad::Error.find(:all)
+    Hoptoad::Error.find(:all, :params => { :page => 2 })
+
+To find an individual error, you can find by ID:
+
+    Hoptoad::Error.find(error_id)
+
+Find *all* notices of an error:
+
+    Hoptoad::Notice.all(error_id)
+
+Find an individual notice:
+
+    Hoptoad::Notice.find(notice_id, error_id)
 
 
-h2. Requirements
+Requirements
+------------
 
 * HTTParty
 * Hashie
 
-h2. Acknowledgements
+Contributors
+------------
 
-* "Hoptoad":http://hoptoadapp.com
-
-h2. Contributors
-
-Matias Käkelä (SSL Support)
-Jordan Brough (Notices)
+* Matias Käkelä (SSL Support)
+* Jordan Brough (Notices)
