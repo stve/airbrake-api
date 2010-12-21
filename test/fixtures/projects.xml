@@ -1,0 +1,25 @@
+HTTP/1.1 200 OK
+
+<?xml version="1.0" encoding="UTF-8"?>
+<projects>
+  <project>
+    <id>1</id>
+    <name>Venkman</name>
+    <api-key>c3bb6f719742fd1e5768d6d1361cfb49</api-key>
+  </project>
+  <project>
+    <id>2</id>
+    <name>Stantz</name>
+    <api-key>fda6ef9f6ba8382c875468cd70d33ecf</api-key>
+  </project>
+  <project>
+    <id>3</id>
+    <name>Spengler</name>
+    <api-key>2430242dc52b9fec75095457ac808899</api-key>
+  </project>
+  <project>
+    <id>4</id>
+    <name>Zeddemore</name>
+    <api-key>051d21b089e532e4bcce2fe1e7fb0e0b</api-key>
+  </project>
+</projects>

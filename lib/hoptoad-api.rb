@@ -25,5 +25,6 @@ end
 
 require 'hoptoad-api/core_extensions'
 require 'hoptoad-api/client'
-require 'hoptoad-api/notice'
 require 'hoptoad-api/error'
+require 'hoptoad-api/notice'
+require 'hoptoad-api/project'

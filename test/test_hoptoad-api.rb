@@ -9,7 +9,6 @@ class HoptoadTest < Test::Unit::TestCase
       Hoptoad.secure = false
     end
 
-
     should "allow setting of the account" do
       Hoptoad.account = 'myapp'
       assert_equal Hoptoad.account, 'myapp'
@@ -31,7 +30,7 @@ class HoptoadTest < Test::Unit::TestCase
       assert_equal Hoptoad.protocol, 'http'
     end
 
-    should "should immplement #configure" do
+    should "should implement #configure" do
       Hoptoad.configure(:account => 'anapp', :auth_token => 'abcdefg', :secure => true)
       assert_equal Hoptoad.protocol, 'https'
       assert_equal Hoptoad.auth_token, 'abcdefg'
@@ -53,6 +52,10 @@ class HoptoadTest < Test::Unit::TestCase
 
     should "generate correct error path given an id" do
       assert_equal "/errors/1234.xml", Hoptoad::Error.error_path(1234)
+    end
+
+    should "have correct projects path" do
+      assert_equal "/data_api/v1/projects.xml", Hoptoad::Project.collection_path
     end
 
     context "when finding errors" do
@@ -94,6 +97,17 @@ class HoptoadTest < Test::Unit::TestCase
 
       should "find individual notices" do
         Hoptoad::Notice.find(1234, 1696170)
+      end
+
+    end
+
+    context "when retrieving projects" do
+
+      should "find projects" do
+        projects = Hoptoad::Project.find(:all)
+        assert_equal projects.size, 4
+        assert_equal projects.first.id, '1'
+        assert_equal projects.first.name, 'Venkman'
       end
 
     end
