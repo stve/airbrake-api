@@ -44,6 +44,18 @@ Find an individual notice:
 
     Hoptoad::Notice.find(notice_id, error_id)
 
+Projects
+--------
+
+To retrieve a list of projects:
+
+    Hoptoad::Project.find(:all)
+
+Responses
+---------
+
+If an error is returned from the API.  A HoptoadError will be raised.  Successful responses will return a Hashie::Mash object based on the data from the response.
+
 
 Requirements
 ------------
