@@ -23,6 +23,5 @@ module Hoptoad
 
 end
 
-require 'hoptoad-api/version'
 require 'hoptoad-api/core_extensions'
 require 'hoptoad-api/client'
