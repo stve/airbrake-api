@@ -18,6 +18,11 @@ describe Hoptoad::Notice do
     notices.size.should == 42
   end
 
+  it "should find all error notices with a page limit" do
+    notices = Hoptoad::Notice.find_all_by_error_id(1696171, :pages => 2)
+    notices.size.should == 60
+  end
+
   it "should find individual notices" do
     Hoptoad::Notice.find(1234, 1696170)
   end

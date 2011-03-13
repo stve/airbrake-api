@@ -13,13 +13,13 @@ module Hoptoad
       hash.notice
     end
 
-    def self.find_all_by_error_id(error_id)
+    def self.find_all_by_error_id(error_id, notice_options = {})
       setup
 
       options = {}
       notices = []
       page = 1
-      while true
+      while !notice_options[:pages] || page <= notice_options[:pages]
         options[:page] = page
         hash = fetch(all_path(error_id), options)
         if hash.errors

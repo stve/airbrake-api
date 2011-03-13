@@ -22,6 +22,12 @@ FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170/notices.x
 FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?page=1&auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
 FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?auth_token=abcdefg123456&page=2", :response => File.join(File.dirname(__FILE__), 'fixtures', 'paginated_notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
 FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170/notices/1234.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
+FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
+FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=1", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
+FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=2", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
+FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=3", :response => File.join(File.dirname(__FILE__), 'fixtures', 'paginated_notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
+FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices/1234.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
+
 
 # projects
 FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/data_api/v1/projects.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'projects.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
