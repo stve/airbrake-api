@@ -30,7 +30,7 @@ Finding Errors
 Errors are paginated, the API responds with 25 at a time, pass an optional params hash for additional pages:
 
     Hoptoad::Error.find(:all)
-    Hoptoad::Error.find(:all, :params => { :page => 2 })
+    Hoptoad::Error.find(:all, :page => 2)
 
 To find an individual error, you can find by ID:
 
