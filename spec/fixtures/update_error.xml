@@ -1,0 +1,207 @@
+HTTP/1.1 200 OK
+
+<?xml version="1.0" encoding="UTF-8"?>
+<group>
+  <action>index</action>
+  <controller>shades</controller>
+  <created-at type="datetime">2010-04-16T21:45:30Z</created-at>
+  <error-class>ActiveRecord::StatementInvalid</error-class>
+  <error-message>ActiveRecord::StatementInvalid: Mysql::Error: Unknown column 'otype' in 'order clause': SELECT shades.* FROM shades ORDER BY 'otype desc'</error-message>
+  <file>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb</file>
+  <id type="integer">1696170</id>
+  <lighthouse-ticket-id type="integer" nil="true"></lighthouse-ticket-id>
+  <line-number type="integer">219</line-number>
+  <most-recent-notice-at type="datetime">2010-04-24T02:27:11Z</most-recent-notice-at>
+  <notice-hash>71ce436b9c091d468daf479eeee4b216</notice-hash>
+  <notices-count type="integer">455</notices-count>
+  <project-id type="integer">248</project-id>
+  <rails-env>production</rails-env>
+  <resolved type="boolean">true</resolved>
+  <updated-at type="datetime">2010-04-24T02:27:11Z</updated-at>
+  <environment>
+    <rack-session-record>#&lt;ActiveRecord::SessionStore::Session:0x2b6486cfc9a0&gt;</rack-session-record>
+    <action-controller-rescue-request>#&lt;ActionController::Request:0x2b6486d02788&gt;</action-controller-rescue-request>
+    <server-name>_</server-name>
+    <http-user-agent>Mozilla/5.0 (compatible; Yahoo! Slurp/3.0; http://help.yahoo.com/help/us/ysearch/slurp)</http-user-agent>
+    <rack-run-once>false</rack-run-once>
+    <content-length>0</content-length>
+    <http-via>1.0 v1-akamaitech.net(ghost) (AkamaiGHost), 1.1 akamai.net(ghost) (AkamaiGHost)</http-via>
+    <http-accept-encoding>gzip</http-accept-encoding>
+    <path-info>/company/sigm/shades</path-info>
+    <rack-url-scheme>http</rack-url-scheme>
+    <passenger-app-spawner-idle-time>0</passenger-app-spawner-idle-time>
+    <http-te>chunked;q=1.0</http-te>
+    <rack-input>#&lt;Rack::RewindableInput:0x2b6486d037a0&gt;</rack-input>
+    <http-host>www.myapp.com</http-host>
+    <http-accept-language>en-us,en;q=0.5</http-accept-language>
+    <server-addr>127.0.0.1</server-addr>
+    <http-cache-control>no-cache, max-age=0</http-cache-control>
+    <server-protocol>HTTP/1.0</server-protocol>
+    <rack-errors>#&lt;IO:0x2b647c6aeeb8&gt;</rack-errors>
+    <script-name></script-name>
+    <action-controller-request-request-parameters></action-controller-request-request-parameters>
+    <remote-addr>127.0.0.1</remote-addr>
+    <server-software>nginx/0.6.35</server-software>
+    <passenger-spawn-method>smart-lv2</passenger-spawn-method>
+    <passenger-environment>production</passenger-environment>
+    <http-akamai-origin-hop>2</http-akamai-origin-hop>
+    <rack-multithread>false</rack-multithread>
+    <http-accept-charset>ISO-8859-1,utf-8;q=0.7,*;q=0.7</http-accept-charset>
+    <http-true-client-ip>67.195.110.176</http-true-client-ip>
+    <rack.request.query_hash>
+      <options>true</options>
+      <sort-order>asc</sort-order>
+      <sort-key>strike_price_in_cents</sort-key>
+    </rack.request.query_hash>
+    <rack-version>10</rack-version>
+    <action_controller.request.path_parameters>
+      <action>index</action>
+      <controller>shades</controller>
+      <company-id>sigm</company-id>
+    </action_controller.request.path_parameters>
+    <rack-multiprocess>true</rack-multiprocess>
+    <http-x-akamai-config-log-detail>true</http-x-akamai-config-log-detail>
+    <request-uri>/company/sigm/shades?options=true&amp;sort_key=strike_price_in_cents&amp;sort_order=asc</request-uri>
+    <document-root>/data/myapp/current/public</document-root>
+    <server-port>81</server-port>
+    <scgi>1</scgi>
+    <passenger-app-type>rails</passenger-app-type>
+    <passenger-use-global-queue>true</passenger-use-global-queue>
+    <action-controller-rescue-response>#&lt;ActionController::Response:0x2b6486d02468&gt;</action-controller-rescue-response>
+    <remote-port>33166</remote-port>
+    <http-pragma>no-cache</http-pragma>
+    <rack-request-query-string>options=true&amp;sort_key=strike_price_in_cents&amp;sort_order=asc</rack-request-query-string>
+    <rack.session.options>
+      <domain></domain>
+      <id>4060bb6302450f0f0e94acc4ec9964e3</id>
+      <secure>false</secure>
+      <expire-after></expire-after>
+      <cookie-only>true</cookie-only>
+      <key>_tk_www_session</key>
+      <path>/</path>
+      <secret>270022c1d7400e0aba2f515d59d3bd56f18d036428c0a16a1292b6d4d1f0a90c67e5247f8e15d67abcc690fe94bac1793789cdef843a679231d7e43d104ad674</secret>
+      <httponly>true</httponly>
+    </rack.session.options>
+    <query-string>options=true&amp;sort_key=strike_price_in_cents&amp;sort_order=asc</query-string>
+    <rack.session>
+      <sliding-session-expires-at>Fri Apr 23 21:27:12 -0700 2010</sliding-session-expires-at>
+    </rack.session>
+    <http-x-forwarded-for>67.195.110.176, 96.17.69.188, 67.131.237.20</http-x-forwarded-for>
+    <http-accept>text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5</http-accept>
+    <action_controller.request.query_parameters>
+      <options>true</options>
+      <sort-order>asc</sort-order>
+      <sort-key>strike_price_in_cents</sort-key>
+    </action_controller.request.query_parameters>
+    <passenger-framework-spawner-idle-time>0</passenger-framework-spawner-idle-time>
+    <http-connection>close</http-connection>
+    <http-x-real-ip>67.131.237.20</http-x-real-ip>
+    <request-method>GET</request-method>
+  </environment>
+  <session>
+    <data>
+      <sliding-session-expires-at>Fri Apr 23 21:27:12 -0700 2010</sliding-session-expires-at>
+    </data>
+  </session>
+  <request>
+    <rails-root>/data/myapp/releases/20100416200739</rails-root>
+    <url>http://www.myapp.com/company/sigm/shades?options=true&amp;sort_key=strike_price_in_cents&amp;sort_order=asc</url>
+    <params>
+      <options>true</options>
+      <sort-order>asc</sort-order>
+      <action>index</action>
+      <controller>shades</controller>
+      <company-id>sigm</company-id>
+      <sort-key>strike_price_in_cents</sort-key>
+    </params>
+  </request>
+  <backtrace>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb:219:in `log_without_newrelic_instrumentation'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/active_record_instrumentation.rb:52:in `log'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/active_record_instrumentation.rb:50:in `log'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/mysql_adapter.rb:323:in `execute'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/mysql_adapter.rb:608:in `select'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/database_statements.rb:7:in `select_all_without_query_cache'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:81:in `cache_sql'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:60:in `select_all'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/base.rb:661:in `find_by_sql_without_trace_ActiveRecord___self_name__find_by_sql'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `find_by_sql'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `find_by_sql'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/base.rb:1548:in `find_every'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/base.rb:615:in `find'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/gems/will_paginate-2.2.2/lib/will_paginate/finder.rb:82:in `send'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/gems/will_paginate-2.2.2/lib/will_paginate/finder.rb:82:in `paginate'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/gems/will_paginate-2.2.2/lib/will_paginate/collection.rb:87:in `create'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/gems/will_paginate-2.2.2/lib/will_paginate/finder.rb:76:in `paginate'</line>
+    <line>/data/myapp/releases/20100416200739/app/controllers/shades_controller.rb:85:in `pagination_for_index'</line>
+    <line>/data/myapp/releases/20100416200739/app/controllers/shades_controller.rb:10:in `index'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/base.rb:1331:in `send'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/base.rb:1331:in `perform_action_without_filters'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:10:in `realtime'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/flash.rb:146:in `perform_action_without_newrelic_trace'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `send'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `process_without_filters'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:437:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:87:in `dispatch'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:121:in `_call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/params_parser.rb:15:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/session/abstract_store.rb:122:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/query_cache.rb:29:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/query_cache.rb:9:in `cache'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/query_cache.rb:28:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activerecord/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/activesupport/lib/active_support/cache/strategy/local_cache.rb:24:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/failsafe.rb:26:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'</line>
+    <line>/data/myapp/releases/20100416200739/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:106:in `call'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/rack/request_handler.rb:95:in `process_request'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_request_handler.rb:207:in `main_loop'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/railz/application_spawner.rb:378:in `start_request_handler'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/railz/application_spawner.rb:336:in `handle_spawn_application'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/utils.rb:183:in `safe_fork'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/railz/application_spawner.rb:334:in `handle_spawn_application'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server.rb:352:in `__send__'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server.rb:163:in `start'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/railz/application_spawner.rb:213:in `start'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/spawn_manager.rb:262:in `spawn_rails_application'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server_collection.rb:126:in `lookup_or_add'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/spawn_manager.rb:256:in `spawn_rails_application'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server_collection.rb:80:in `synchronize'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/spawn_manager.rb:255:in `spawn_rails_application'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/spawn_manager.rb:154:in `spawn_application'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/spawn_manager.rb:287:in `handle_spawn_application'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server.rb:352:in `__send__'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server.rb:352:in `main_loop'</line>
+    <line>/usr/lib/passenger/lib/phusion_passenger/abstract_server.rb:196:in `start_synchronously'</line>
+    <line>/usr/lib/passenger/bin/passenger-spawn-server:63</line>
+  </backtrace>
+</group>

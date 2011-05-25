@@ -44,6 +44,10 @@ Find an individual notice:
 
     Hoptoad::Notice.find(notice_id, error_id)
 
+To resolve an error via the API:
+
+    Hoptoad::Error.update(1696170, :group => { :resolved => true})
+
 Projects
 --------
 

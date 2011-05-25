@@ -22,7 +22,14 @@ module Hoptoad
     def self.update(error, options)
       setup
 
-      self.class.put(collection_path, options)
+      response = put(error_path(error), { :query => options })
+      if response.code == 403
+        raise HoptoadError.new('SSL should be enabled - use Hoptoad.secure = true in configuration')
+      end
+      results = Hashie::Mash.new(response)
+
+      raise HoptoadError.new(results.errors.error) if results.errors
+      results.group
     end
 
     private
