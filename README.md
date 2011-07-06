@@ -38,7 +38,7 @@ To find an individual error, you can find by ID:
 
 Find *all* notices of an error:
 
-    Hoptoad::Notice.all(error_id)
+    Hoptoad::Notice.find_all_by_error_id(error_id)
 
 Find an individual notice:
 
