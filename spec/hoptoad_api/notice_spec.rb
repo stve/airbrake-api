@@ -23,6 +23,15 @@ describe Hoptoad::Notice do
     notices.size.should == 60
   end
 
+  it "yields batches" do
+    batches = []
+    notices = Hoptoad::Notice.find_all_by_error_id(1696171, :pages => 2) do |batch|
+      batches << batch
+    end
+    notices.size.should == 60
+    batches.map(&:size).should == [30,30]
+  end
+
   it "should find individual notices" do
     Hoptoad::Notice.find(1234, 1696170)
   end

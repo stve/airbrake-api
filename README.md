@@ -48,6 +48,16 @@ To resolve an error via the API:
 
     Hoptoad::Error.update(1696170, :group => { :resolved => true})
 
+Recreate an error:
+
+    STDOUT.sync = true
+    Hoptoad::Notice.find_all_by_error_id(error_id) do |batch|
+      batch.each do |notice|
+        result = system "curl --silent '#{notice.request.url}' > /dev/null"
+        print (result ? '.' : 'F')
+      end
+    end
+
 Projects
 --------
 

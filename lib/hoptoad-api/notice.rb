@@ -27,9 +27,12 @@ module Hoptoad
         end
         notice_stubs = hash.notices
 
-        notice_stubs.map do |notice|
-          notices << find(notice.id, error_id)
+        batch = notice_stubs.map do |notice|
+          find(notice.id, error_id)
         end
+        yield batch if block_given?
+        batch.each{|n| notices << n }
+
         break if notice_stubs.size < 30
         page += 1
       end
