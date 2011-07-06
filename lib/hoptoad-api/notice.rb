@@ -1,5 +1,9 @@
+require 'parallel'
+
 module Hoptoad
   class Notice < Hoptoad::Base
+    PER_PAGE = 30
+    PARALLEL_WORKERS = 10
 
     def self.find(id, error_id, options={})
       setup
@@ -25,15 +29,14 @@ module Hoptoad
         if hash.errors
           raise HoptoadError.new(results.errors.error)
         end
-        notice_stubs = hash.notices
 
-        batch = notice_stubs.map do |notice|
-          find(notice.id, error_id)
+        batch = Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
+          find(notice_stub.id, error_id)
         end
         yield batch if block_given?
         batch.each{|n| notices << n }
 
-        break if notice_stubs.size < 30
+        break if batch.size < PER_PAGE
         page += 1
       end
       notices
