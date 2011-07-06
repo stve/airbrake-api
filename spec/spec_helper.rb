@@ -11,28 +11,34 @@ require 'fakeweb'
 
 FakeWeb.allow_net_connect = false
 
+DEFAULTS = {:content_type => "application/xml; charset=utf-8", :status => ["403", "Forbidden"]}
+
+def fixture_request(verb, url, file)
+  FakeWeb.register_uri(verb, url, DEFAULTS.merge(:response => File.join(File.dirname(__FILE__), 'fixtures', file)))
+end
+
 # errors
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'errors.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors.xml?auth_token=abcdefg123456&page=2", :response => File.join(File.dirname(__FILE__), 'fixtures', 'paginated_errors.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'individual_error.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:put, 'http://myapp.hoptoadapp.com/errors/1696170.xml?auth_token=abcdefg123456&group[resolved]=true', :response => File.join(File.dirname(__FILE__), 'fixtures', 'update_error.xml'), :content_type => 'application/xml; charset=utf-8', :status => ['200', 'OK'])
+fixture_request :get, 'http://myapp.hoptoadapp.com/errors.xml?auth_token=abcdefg123456', 'errors.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors.xml?auth_token=abcdefg123456&page=2", 'paginated_errors.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170.xml?auth_token=abcdefg123456", 'individual_error.xml'
+fixture_request :put, 'http://myapp.hoptoadapp.com/errors/1696170.xml?auth_token=abcdefg123456&group[resolved]=true', 'update_error.xml'
 
 # notices
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?auth_token=abcdefg123456&page=1", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?page=1&auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?auth_token=abcdefg123456&page=2", :response => File.join(File.dirname(__FILE__), 'fixtures', 'paginated_notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696170/notices/1234.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=1", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=2", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=3", :response => File.join(File.dirname(__FILE__), 'fixtures', 'paginated_notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/errors/1696171/notices/1234.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'notices.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?auth_token=abcdefg123456", 'notices.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?auth_token=abcdefg123456&page=1", 'notices.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?page=1&auth_token=abcdefg123456", 'notices.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?auth_token=abcdefg123456&page=2", 'paginated_notices.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices/1234.xml?auth_token=abcdefg123456", 'individual_notice.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456", 'notices.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=1", 'notices.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=2", 'notices.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=3", 'paginated_notices.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696171/notices/1234.xml?auth_token=abcdefg123456", 'notices.xml'
 
 
 # projects
-FakeWeb.register_uri(:get, "http://myapp.hoptoadapp.com/data_api/v1/projects.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'projects.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
+fixture_request :get, "http://myapp.hoptoadapp.com/data_api/v1/projects.xml?auth_token=abcdefg123456", 'projects.xml'
 
 # ssl responses
-FakeWeb.register_uri(:get, "http://sslapp.hoptoadapp.com/errors/1696170.xml?auth_token=abcdefg123456", :body => " ", :content_type => "application/xml; charset=utf-8", :status => ["403", "Forbidden"])
-FakeWeb.register_uri(:get, "https://sslapp.hoptoadapp.com/errors/1696170.xml?auth_token=abcdefg123456", :response => File.join(File.dirname(__FILE__), 'fixtures', 'individual_error.xml'), :content_type => "application/xml; charset=utf-8", :status => ["200", "OK"])
+fixture_request :get, "https://sslapp.hoptoadapp.com/errors/1696170.xml?auth_token=abcdefg123456", 'individual_error.xml'
+FakeWeb.register_uri(:get, "http://sslapp.hoptoadapp.com/errors/1696170.xml?auth_token=abcdefg123456", DEFAULTS.merge(:body => " ", :status => ["403", "Forbidden"]))
