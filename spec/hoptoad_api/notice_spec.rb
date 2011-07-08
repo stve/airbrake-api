@@ -24,7 +24,7 @@ describe Hoptoad::Notice do
   end
 
   it "should find individual notices" do
-    Hoptoad::Notice.find(1234, 1696170)
+    Hoptoad::Notice.find(1234, 1696170).should_not == nil
   end
 
 end
