@@ -28,3 +28,14 @@ module Hoptoad
 
   end
 end
+
+# hoptoad sometimes returns broken xml with strange utmz stuff
+# so we remove this
+require 'httparty/parser'
+class HTTParty::Parser
+  alias utmz_unaware_xml xml
+  def xml
+    body.gsub!(/<__utmz>.*?<\/__utmz>/m,'')
+    utmz_unaware_xml
+  end
+end

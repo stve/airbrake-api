@@ -29,6 +29,7 @@ fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?au
 fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?page=1&auth_token=abcdefg123456", 'notices.xml'
 fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices.xml?auth_token=abcdefg123456&page=2", 'paginated_notices.xml'
 fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices/1234.xml?auth_token=abcdefg123456", 'individual_notice.xml'
+fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696170/notices/666.xml?auth_token=abcdefg123456", 'broken_notice.xml'
 fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456", 'notices.xml'
 fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=1", 'notices.xml'
 fixture_request :get, "http://myapp.hoptoadapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=2", 'notices.xml'
