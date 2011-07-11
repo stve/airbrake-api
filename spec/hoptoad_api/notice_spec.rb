@@ -36,4 +36,7 @@ describe Hoptoad::Notice do
     Hoptoad::Notice.find(1234, 1696170).should_not == nil
   end
 
+  it "should find a broken notices" do
+    Hoptoad::Notice.find(666, 1696170).should_not == nil
+  end
 end

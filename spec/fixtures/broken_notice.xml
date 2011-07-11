@@ -1,0 +1,288 @@
+HTTP/1.1 200 OK
+
+<?xml version="1.0" encoding="UTF-8"?>
+<notice>
+  <created-at type="datetime">2011-07-06T09:38:44Z</created-at>
+  <project-id type="integer">849</project-id>
+  <updated-at type="datetime">2011-07-06T09:38:44Z</updated-at>
+  <error-message>TypeError: can't convert Fixnum into String</error-message>
+  <group-id type="integer">9004013</group-id>
+
+  <id type="integer">1625800089</id>
+  <environment>
+    <rack-session></rack-session>
+    <HTTP_ACCEPT>
+    </HTTP_ACCEPT>
+    <HTTP_HOST>
+      <de-dawanda-com></de-dawanda-com>
+    </HTTP_HOST>
+
+    <SERVER_NAME>
+      <cookie4-dawanda-com></cookie4-dawanda-com>
+    </SERVER_NAME>
+    <HTTP_X_REAL_IP>
+      <127-0-0-1></127-0-0-1>
+    </HTTP_X_REAL_IP>
+    <HTTP_USER_AGENT>
+      <infopath-2></infopath-2>
+
+      <net-clr-3-0-30729></net-clr-3-0-30729>
+      <trident-4-0></trident-4-0>
+      <msie-7-0></msie-7-0>
+      <net-clr-3-5-30729></net-clr-3-5-30729>
+      <slcc2></slcc2>
+      <gtb7-1></gtb7-1>
+      <windows-nt-6-1></windows-nt-6-1>
+      <net4-0c></net4-0c>
+      <media-center-pc-6-0></media-center-pc-6-0>
+
+      <net-clr-2-0-50727></net-clr-2-0-50727>
+      <wow64></wow64>
+      <msoffice-12></msoffice-12>
+      <mozilla-4-0-compatible></mozilla-4-0-compatible>
+    </HTTP_USER_AGENT>
+    <PASSENGER_SPAWN_METHOD>
+      <smart></smart>
+    </PASSENGER_SPAWN_METHOD>
+    <PASSENGER_CONNECT_PASSWORD>
+
+      <c3q43q3iskkbtzcbxvclhjpuvbbx7ras5bgc7xnbbst></c3q43q3iskkbtzcbxvclhjpuvbbx7ras5bgc7xnbbst>
+    </PASSENGER_CONNECT_PASSWORD>
+    <PASSENGER_FRIENDLY_ERROR_PAGES>
+      <true></true>
+    </PASSENGER_FRIENDLY_ERROR_PAGES>
+    <rack.url_scheme>
+      <http></http>
+    </rack.url_scheme>
+    <CONTENT_LENGTH>
+
+      <0></0>
+    </CONTENT_LENGTH>
+    <rack.request.cookie_hash>
+      <__utma>
+        <65743547-2098315535-1306779867-1309858755-1309861793-21></65743547-2098315535-1306779867-1309858755-1309861793-21>
+      </__utma>
+      <__utmv>
+        <65743547-user></65743547-user>
+
+      </__utmv>
+      <ulc>
+        <1309635910></1309635910>
+      </ulc>
+      <__utmz>
+        <65743547.1306779867.1.1.utmcsr>
+          <(direct)|utmccn>
+            <(direct)|utmcmd>
+              <none></none>
+            </(direct)|utmcmd>
+
+          </(direct)|utmccn>
+        </65743547.1306779867.1.1.utmcsr>
+      </__utmz>
+      <lang>
+        <de-de></de-de>
+      </lang>
+      <remember_token>
+        <1df0267eec3557f3cebc805fe41a8719ae566767></1df0267eec3557f3cebc805fe41a8719ae566767>
+
+      </remember_token>
+      <dawanda_vanity8>
+        <8452434631e07058ce4491ca7d1fc65c></8452434631e07058ce4491ca7d1fc65c>
+      </dawanda_vanity8>
+      <partner>
+        <dawanda-de></dawanda-de>
+      </partner>
+    </rack.request.cookie_hash>
+
+    <rack.errors>
+      <io-0x3c91fa0></io-0x3c91fa0>
+    </rack.errors>
+    <action-controller-request-request-parameters></action-controller-request-request-parameters>
+    <SERVER_PROTOCOL>
+      <http-1-0></http-1-0>
+    </SERVER_PROTOCOL>
+    <SERVER_SOFTWARE>
+      <nginx-0-8-52></nginx-0-8-52>
+
+    </SERVER_SOFTWARE>
+    <PASSENGER_MIN_INSTANCES>
+      <5></5>
+    </PASSENGER_MIN_INSTANCES>
+    <REMOTE_ADDR>
+      <192-168-2-22></192-168-2-22>
+    </REMOTE_ADDR>
+    <PASSENGER_ANALYTICS>
+
+      <false></false>
+    </PASSENGER_ANALYTICS>
+    <rack.version>
+      <0></0>
+      <1></1>
+    </rack.version>
+    <PATH_INFO>
+      <counters-secure-pixel></counters-secure-pixel>
+
+    </PATH_INFO>
+    <rack.run_once>
+      <false></false>
+    </rack.run_once>
+    <SERVER_ADDR>
+      <192-168-2-25></192-168-2-25>
+    </SERVER_ADDR>
+    <rack.request.cookie_string>
+
+      <ulc>
+        <1309635910></1309635910>
+      </ulc>
+      <__utmv>
+        <65743547-user></65743547-user>
+      </__utmv>
+      <__utma>
+        <65743547-2098315535-1306779867-1309858755-1309861793-21></65743547-2098315535-1306779867-1309858755-1309861793-21>
+
+      </__utma>
+      <__utmz>
+        <65743547.1306779867.1.1.utmcsr>
+          <(direct)|utmccn>
+            <(direct)|utmcmd>
+              <none></none>
+            </(direct)|utmcmd>
+          </(direct)|utmccn>
+        </65743547.1306779867.1.1.utmcsr>
+      </__utmz>
+      <remember_token>
+
+        <1df0267eec3557f3cebc805fe41a8719ae566767></1df0267eec3557f3cebc805fe41a8719ae566767>
+      </remember_token>
+      <lang>
+        <de-de></de-de>
+      </lang>
+    </rack.request.cookie_string>
+  </environment>
+  <session>
+
+    <data>
+    </data>
+  </session>
+  <request>
+    <rails-root>/srv/dawanda.com/releases/20110622211451</rails-root>
+    <url>http://de.dawanda.com/counters/secure_pixel?data=eJxj4ajmsOJKL8ovLVCSjs9NzMzRTUnVzS9KSS2KL87ILChITbHiTEksSVXiNzIwNNQ1MNc1MLPizEvMTVXiKstMLS8GAJ-5FAY|b004b9e2a6bde04eb349bd1d51dced20aeacab2c&amp;expires=never</url>
+    <params>
+
+      <data>
+        <ejxj4ajmsojkl8ovlvcsjs9nzmzrtunvzs9kss2kl87ilchitbhitekssvxinziwnnq1mnc1mlpizevmtvxikstmls8gaj-5fay-b004b9e2a6bde04eb349bd1d51dced20aeacab2c></ejxj4ajmsojkl8ovlvcsjs9nzmzrtunvzs9kss2kl87ilchitbhitekssvxinziwnnq1mnc1mlpizevmtvxikstmls8gaj-5fay-b004b9e2a6bde04eb349bd1d51dced20aeacab2c>
+      </data>
+      <expires>
+        <never></never>
+      </expires>
+      <action>secure_pixel</action>
+      <controller>counters</controller>
+
+    </params>
+  </request>
+  <backtrace>
+    <line>[PROJECT_ROOT]/app/models/counter.rb:64:in `+'</line>
+    <line>[PROJECT_ROOT]/app/models/counter.rb:64:in `counter_for_date'</line>
+    <line>[PROJECT_ROOT]/app/models/counter.rb:54:in `counter_id_for_date'</line>
+    <line>[PROJECT_ROOT]/vendor/plugins/cachy/lib/cachy.rb:28:in `cache'</line>
+
+    <line>[PROJECT_ROOT]/app/models/counter.rb:53:in `counter_id_for_date'</line>
+    <line>[PROJECT_ROOT]/app/models/counter.rb:12:in `increment_for_date'</line>
+    <line>[PROJECT_ROOT]/app/controllers/counters_controller.rb:16:in `secure_pixel'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/base.rb:1333:in `send'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/base.rb:1333:in `perform_action_without_filters'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/filters.rb:617:in `call_filters'</line>
+
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
+    <line>/usr/local/lib/ruby/1.8/benchmark.rb:308:in `realtime'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/activesupport-2.3.11/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</line>
+
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/flash.rb:151:in `perform_action_without_newrelic_trace'</line>
+    <line>[GEM_ROOT]/gems/newrelic_rpm-2.13.3/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:254:in `perform_action'</line>
+    <line>[GEM_ROOT]/gems/newrelic_rpm-2.13.3/lib/new_relic/agent/method_tracer.rb:141:in `trace_execution_scoped'</line>
+    <line>[GEM_ROOT]/gems/newrelic_rpm-2.13.3/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:247:in `perform_action'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `send'</line>
+
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/base.rb:532:in `process_without_filters'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/filters.rb:606:in `process'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/base.rb:391:in `process'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/base.rb:386:in `call'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/routing/route_set.rb:438:in `call'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:87:in `dispatch'</line>
+
+    <line>/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:121:in `_call'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:29:in `call'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'</line>
+    <line>[PROJECT_ROOT]/vendor/plugins/masochism/lib/active_reload/connection_proxy.rb:137:in `send'</line>
+
+    <line>[PROJECT_ROOT]/vendor/plugins/masochism/lib/active_reload/connection_proxy.rb:137:in `method_missing'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:9:in `cache'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/query_cache.rb:28:in `call'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/activerecord-2.3.11/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'</line>
+    <line>[PROJECT_ROOT]/vendor/plugins/api-throttling/lib/api_throttling.rb:16:in `call'</line>
+    <line>[PROJECT_ROOT]/lib/http_verb_responder.rb:11:in `call'</line>
+
+    <line>[PROJECT_ROOT]/lib/meta_info.rb:9:in `call'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/string_coercion.rb:25:in `call'</line>
+    <line>[GEM_ROOT]/gems/rack-1.1.0/lib/rack/head.rb:9:in `call'</line>
+    <line>[GEM_ROOT]/gems/rack-1.1.0/lib/rack/methodoverride.rb:24:in `call'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/params_parser.rb:15:in `call'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/session/abstract_store.rb:177:in `call'</line>
+
+    <line>[GEM_ROOT]/gems/activesupport-2.3.11/lib/active_support/cache/strategy/local_cache.rb:25:in `call'</line>
+    <line>[GEM_ROOT]/gems/actionpack-2.3.11/lib/action_controller/failsafe.rb:26:in `call'</line>
+    <line>[GEM_ROOT]/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'</line>
+    <line>[GEM_ROOT]/gems/rack-1.1.0/lib/rack/lock.rb:11:in `synchronize'</line>
+    <line>[GEM_ROOT]/gems/rack-1.1.0/lib/rack/lock.rb:11:in `call'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/actionpack-2.3.11/lib/action_controller/dispatcher.rb:106:in `call'</line>
+
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/rack/request_handler.rb:96:in `process_request'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_request_handler.rb:513:in `accept_and_process_next_request'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_request_handler.rb:274:in `main_loop'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/classic_rails/application_spawner.rb:321:in `start_request_handler'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `send'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/classic_rails/application_spawner.rb:275:in `handle_spawn_application'</line>
+
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/utils.rb:479:in `safe_fork'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/classic_rails/application_spawner.rb:270:in `handle_spawn_application'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:357:in `__send__'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:180:in `start'</line>
+
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/classic_rails/application_spawner.rb:149:in `start'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/classic_rails/framework_spawner.rb:268:in `handle_spawn_application'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/classic_rails/framework_spawner.rb:263:in `handle_spawn_application'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'</line>
+
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/classic_rails/framework_spawner.rb:261:in `handle_spawn_application'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:357:in `__send__'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:180:in `start'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/classic_rails/framework_spawner.rb:93:in `start'</line>
+
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/spawn_manager.rb:219:in `spawn_rails_application'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server_collection.rb:132:in `lookup_or_add'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/spawn_manager.rb:214:in `spawn_rails_application'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server_collection.rb:82:in `synchronize'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server_collection.rb:79:in `synchronize'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/spawn_manager.rb:213:in `spawn_rails_application'</line>
+
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/spawn_manager.rb:132:in `spawn_application'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/spawn_manager.rb:275:in `handle_spawn_application'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:357:in `__send__'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:357:in `server_main_loop'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/lib/phusion_passenger/abstract_server.rb:206:in `start_synchronously'</line>
+    <line>/usr/local/lib/ruby/gems/1.8/gems/passenger-3.0.0/helper-scripts/passenger-spawn-server:99</line>
+
+  </backtrace>
+</notice>
