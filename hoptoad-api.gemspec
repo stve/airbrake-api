@@ -16,6 +16,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency(%q<httparty>, [">= 0.5.2"])
   s.add_dependency(%q<hashie>, [">= 0.2.0"])
+  s.add_dependency(%q<parallel>, [">= 0.5.0"])
 
   s.add_development_dependency('rake', '~> 0.9.2')
   s.add_development_dependency('rspec', '~> 2.6.0')
