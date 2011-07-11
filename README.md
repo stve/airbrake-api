@@ -1,7 +1,7 @@
 Hoptoad API
 ===========
 
-An unofficial Ruby library for interacting with the [Hoptoad API](http://hoptoadapp.com/pages/api)
+A ruby wrapper for the [Hoptoad API](http://hoptoadapp.com/pages/api)
 
 Usage
 -----
@@ -71,14 +71,9 @@ Responses
 If an error is returned from the API.  A HoptoadError will be raised.  Successful responses will return a Hashie::Mash object based on the data from the response.
 
 
-Requirements
-------------
-
-* HTTParty
-* Hashie
-
 Contributors
 ------------
 
-* Matias Käkelä (SSL Support)
-* Jordan Brough (Notices)
+* [Matias Käkelä](https://github.com/massive) - SSL Support
+* [Jordan Brough](https://github.com/jordan-brough) - Notices
+* [Michael Grosser](https://github.com/grosser) - Numerous performance improvements and bug fixes

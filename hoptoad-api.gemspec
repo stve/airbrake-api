@@ -7,8 +7,8 @@ Gem::Specification.new do |s|
   s.version   = Hoptoad::VERSION
   s.platform  = Gem::Platform::RUBY
 
-  s.summary = "Hoptoad API"
-  s.description = "An unofficial gem for interacting with the Hoptoad API"
+  s.summary = "A ruby wrapper for the Hoptoad API"
+  s.description = "A ruby wrapper for the Hoptoad API"
 
   s.authors   = ['Steve Agalloco']
   s.email     = ['steve.agalloco@gmail.com']
