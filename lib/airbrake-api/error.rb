@@ -1,5 +1,5 @@
-module Hoptoad
-  class Error < Hoptoad::Base
+module Airbrake
+  class Error < Airbrake::Base
 
     def self.find(*args)
       setup
@@ -10,11 +10,11 @@ module Hoptoad
         when :all
           find_all(args)
         else
-          raise HoptoadError.new('Invalid argument')
+          raise AirbrakeError.new('Invalid argument')
       end
 
-      raise HoptoadError.new('No results found.') if results.nil?
-      raise HoptoadError.new(results.errors.error) if results.errors
+      raise AirbrakeError.new('No results found.') if results.nil?
+      raise AirbrakeError.new(results.errors.error) if results.errors
 
       results.group || results.groups
     end
@@ -24,11 +24,11 @@ module Hoptoad
 
       response = put(error_path(error), { :query => options })
       if response.code == 403
-        raise HoptoadError.new('SSL should be enabled - use Hoptoad.secure = true in configuration')
+        raise AirbrakeError.new('SSL should be enabled - use Airbrake.secure = true in configuration')
       end
       results = Hashie::Mash.new(response)
 
-      raise HoptoadError.new(results.errors.error) if results.errors
+      raise AirbrakeError.new(results.errors.error) if results.errors
       results.group
     end
 

@@ -1,18 +1,18 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "hoptoad-api/version"
+require "airbrake-api/version"
 
 Gem::Specification.new do |s|
-  s.name      = 'hoptoad-api'
-  s.version   = Hoptoad::VERSION
+  s.name      = 'airbrake-api'
+  s.version   = Airbrake::VERSION
   s.platform  = Gem::Platform::RUBY
 
-  s.summary = "A ruby wrapper for the Hoptoad API"
-  s.description = "A ruby wrapper for the Hoptoad API"
+  s.summary = "A ruby wrapper for the Airbrake API"
+  s.description = "A ruby wrapper for the Airbrake API"
 
   s.authors   = ['Steve Agalloco']
   s.email     = ['steve.agalloco@gmail.com']
-  s.homepage  = 'http://github.com/spagalloco/hoptoad-api'
+  s.homepage  = 'http://github.com/spagalloco/hoptoad-api' # FIXME: change to airbrake-api when repo has been renamed
 
   s.add_dependency(%q<httparty>, [">= 0.5.2"])
   s.add_dependency(%q<hashie>, [">= 0.2.0"])
