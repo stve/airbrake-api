@@ -1,7 +1,7 @@
 require 'parallel'
 
-module Hoptoad
-  class Notice < Hoptoad::Base
+module Airbrake
+  class Notice < Airbrake::Base
     PER_PAGE = 30
     PARALLEL_WORKERS = 10
 
@@ -11,7 +11,7 @@ module Hoptoad
       hash = fetch(find_path(id, error_id), options)
 
       if hash.errors
-        raise HoptoadError.new(results.errors.error)
+        raise AirbrakeError.new(results.errors.error)
       end
 
       hash.notice
@@ -27,7 +27,7 @@ module Hoptoad
         options[:page] = page
         hash = fetch(all_path(error_id), options)
         if hash.errors
-          raise HoptoadError.new(results.errors.error)
+          raise AirbrakeError.new(results.errors.error)
         end
 
         batch = Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
@@ -47,7 +47,7 @@ module Hoptoad
 
       hash = fetch(all_path(error_id), options)
       if hash.errors
-        raise HoptoadError.new(results.errors.error)
+        raise AirbrakeError.new(results.errors.error)
       end
 
       hash.notices

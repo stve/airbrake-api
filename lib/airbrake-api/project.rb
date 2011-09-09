@@ -1,5 +1,5 @@
-module Hoptoad
-  class Project < Hoptoad::Base
+module Airbrake
+  class Project < Airbrake::Base
 
     def self.find(*args)
       setup
@@ -7,7 +7,7 @@ module Hoptoad
 
       results = fetch(collection_path, options)
 
-      raise HoptoadError.new(results.errors.error) if results.errors
+      raise AirbrakeError.new(results.errors.error) if results.errors
       results.projects.project
     end
 

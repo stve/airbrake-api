@@ -1,11 +1,11 @@
 require 'hashie'
 require 'httparty'
 
-module Hoptoad
+module Airbrake
   extend self
   attr_accessor :account, :auth_token, :secure
 
-  class HoptoadError < StandardError; end
+  class AirbrakeError < StandardError; end
 
   def configure(options={})
     @account = options[:account] if options.has_key?(:account)
@@ -14,7 +14,7 @@ module Hoptoad
   end
 
   def account_path
-    "#{protocol}://#{@account}.hoptoadapp.com"
+    "#{protocol}://#{@account}.airbrakeapp.com"
   end
 
   def protocol
@@ -23,8 +23,8 @@ module Hoptoad
 
 end
 
-require 'hoptoad-api/core_extensions'
-require 'hoptoad-api/client'
-require 'hoptoad-api/error'
-require 'hoptoad-api/notice'
-require 'hoptoad-api/project'
+require 'airbrake-api/core_extensions'
+require 'airbrake-api/client'
+require 'airbrake-api/error'
+require 'airbrake-api/notice'
+require 'airbrake-api/project'

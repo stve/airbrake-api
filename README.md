@@ -1,57 +1,57 @@
-Hoptoad API
+Airbrake API
 ===========
 
-A ruby wrapper for the [Hoptoad API](http://hoptoadapp.com/pages/api)
+A ruby wrapper for the [Airbrake API](http://airbrakeapp.com/pages/api)
 
 Usage
 -----
 
 The first thing you need to set is the account name.  This is the same as the web address for your account.
 
-    Hoptoad.account = 'myaccount'
+    Airbrake.account = 'myaccount'
 
 Then, you should set the authentication token.
 
-    Hoptoad.auth_token = 'abcdefg'
+    Airbrake.auth_token = 'abcdefg'
 
 If your account uses ssl then turn it on:
 
-    Hoptoad.secure = true
+    Airbrake.secure = true
 
 Optionally, you can configure through a single method:
 
-    Hoptoad.configure(:account => 'anapp', :auth_token => 'abcdefg', :secure => true)
+    Airbrake.configure(:account => 'anapp', :auth_token => 'abcdefg', :secure => true)
 
-Once you've configured authentication, you can make calls against the API.  If no token or authentication is given, a HoptoadError exception will be raised.
+Once you've configured authentication, you can make calls against the API.  If no token or authentication is given, a AirbrakeError exception will be raised.
 
 Finding Errors
 --------------
 
 Errors are paginated, the API responds with 25 at a time, pass an optional params hash for additional pages:
 
-    Hoptoad::Error.find(:all)
-    Hoptoad::Error.find(:all, :page => 2)
+    Airbrake::Error.find(:all)
+    Airbrake::Error.find(:all, :page => 2)
 
 To find an individual error, you can find by ID:
 
-    Hoptoad::Error.find(error_id)
+    Airbrake::Error.find(error_id)
 
 Find *all* notices of an error:
 
-    Hoptoad::Notice.find_all_by_error_id(error_id)
+    Airbrake::Notice.find_all_by_error_id(error_id)
 
 Find an individual notice:
 
-    Hoptoad::Notice.find(notice_id, error_id)
+    Airbrake::Notice.find(notice_id, error_id)
 
 To resolve an error via the API:
 
-    Hoptoad::Error.update(1696170, :group => { :resolved => true})
+    Airbrake::Error.update(1696170, :group => { :resolved => true})
 
 Recreate an error:
 
     STDOUT.sync = true
-    Hoptoad::Notice.find_all_by_error_id(error_id) do |batch|
+    Airbrake::Notice.find_all_by_error_id(error_id) do |batch|
       batch.each do |notice|
         result = system "curl --silent '#{notice.request.url}' > /dev/null"
         print (result ? '.' : 'F')
@@ -63,12 +63,12 @@ Projects
 
 To retrieve a list of projects:
 
-    Hoptoad::Project.find(:all)
+    Airbrake::Project.find(:all)
 
 Responses
 ---------
 
-If an error is returned from the API.  A HoptoadError will be raised.  Successful responses will return a Hashie::Mash object based on the data from the response.
+If an error is returned from the API.  A AirbrakeError will be raised.  Successful responses will return a Hashie::Mash object based on the data from the response.
 
 
 Contributors
