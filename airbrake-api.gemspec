@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
 
   s.authors   = ['Steve Agalloco']
   s.email     = ['steve.agalloco@gmail.com']
-  s.homepage  = 'http://github.com/spagalloco/airbrake-api'
+  s.homepage  = 'https://github.com/spagalloco/airbrake-api'
 
   s.add_dependency(%q<httparty>, [">= 0.5.2"])
   s.add_dependency(%q<hashie>, [">= 0.2.0"])
