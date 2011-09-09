@@ -77,3 +77,4 @@ Contributors
 * [Matias Käkelä](https://github.com/massive) - SSL Support
 * [Jordan Brough](https://github.com/jordan-brough) - Notices
 * [Michael Grosser](https://github.com/grosser) - Numerous performance improvements and bug fixes
+* [Brad Greenlee](https://github.com/bgreenlee) - Switch from Hoptoad to Airbrake
