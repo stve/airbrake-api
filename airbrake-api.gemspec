@@ -14,16 +14,17 @@ Gem::Specification.new do |s|
   s.email     = ['steve.agalloco@gmail.com']
   s.homepage  = 'https://github.com/spagalloco/airbrake-api'
 
-  s.add_dependency(%q<httparty>, [">= 0.5.2"])
-  s.add_dependency(%q<hashie>, [">= 0.2.0"])
-  s.add_dependency(%q<parallel>, [">= 0.5.0"])
+  s.add_dependency 'httparty', '~> 0.8.0'
+  s.add_dependency 'hashie', '~> 1.1.0'
+  s.add_dependency 'parallel', '~> 0.5.0'
 
-  s.add_development_dependency('rake', '~> 0.9.2')
-  s.add_development_dependency('rspec', '~> 2.6.0')
-  s.add_development_dependency('yard', '~> 0.7.2')
-  s.add_development_dependency('maruku', '~> 0.6')
-  s.add_development_dependency('simplecov', '~> 0.4.2')
-  s.add_development_dependency('fakeweb', '~> 1.3.0')
+  s.add_development_dependency 'rake', '~> 0.9.2'
+  s.add_development_dependency 'rspec', '~> 2.6.0'
+  s.add_development_dependency 'yard', '~> 0.7.2'
+  s.add_development_dependency 'maruku', '~> 0.6'
+  s.add_development_dependency 'simplecov', '~> 0.4.2'
+  s.add_development_dependency 'fakeweb', '~> 1.3.0'
+  s.add_development_dependency 'nokogiri', '~> 1.4'
 
   # ensure the gem is built out of versioned files
   s.files         = `git ls-files`.split("\n")
