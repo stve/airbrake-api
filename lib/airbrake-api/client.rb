@@ -29,13 +29,13 @@ module Airbrake
   end
 end
 
-# airbrake sometimes returns broken xml with strange utmz stuff
-# so we remove this
+# airbrake sometimes returns broken xml with invalid xml tag names
+# so we remove them
 require 'httparty/parser'
 class HTTParty::Parser
-  alias utmz_unaware_xml xml
   def xml
     body.gsub!(/<__utmz>.*?<\/__utmz>/m,'')
-    utmz_unaware_xml
+    body.gsub!(/<[0-9]+.*?>.*?<\/[0-9]+.*?>/m,'')
+    MultiXml.parse(body)
   end
 end
