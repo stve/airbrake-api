@@ -1,5 +1,5 @@
-Airbrake API
-===========
+Airbrake API [![Build Status](https://secure.travis-ci.org/spagalloco/airbrake-api.png)](http://travis-ci.org/spagalloco/airbrake-api)
+======================================================================================================================================
 
 A ruby wrapper for the [Airbrake API](http://airbrakeapp.com/pages/api)
 
