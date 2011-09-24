@@ -4,7 +4,7 @@ require "airbrake-api/version"
 
 Gem::Specification.new do |s|
   s.name      = 'airbrake-api'
-  s.version   = Airbrake::VERSION
+  s.version   = AirbrakeAPI::VERSION
   s.platform  = Gem::Platform::RUBY
 
   s.summary = "A ruby wrapper for the Airbrake API"

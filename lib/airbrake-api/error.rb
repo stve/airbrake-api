@@ -1,5 +1,5 @@
-module Airbrake
-  class Error < Airbrake::Base
+module AirbrakeAPI
+  class Error < AirbrakeAPI::Base
 
     def self.find(*args)
       setup

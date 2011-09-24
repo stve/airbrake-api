@@ -1,5 +1,5 @@
-module Airbrake
-  class Project < Airbrake::Base
+module AirbrakeAPI
+  class Project < AirbrakeAPI::Base
 
     def self.find(*args)
       setup

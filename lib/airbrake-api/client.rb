@@ -1,4 +1,4 @@
-module Airbrake
+module AirbrakeAPI
   class Base
     include HTTParty
     format :xml
@@ -6,8 +6,8 @@ module Airbrake
     private
 
     def self.setup
-      base_uri Airbrake.account_path
-      default_params :auth_token => Airbrake.auth_token
+      base_uri AirbrakeAPI.account_path
+      default_params :auth_token => AirbrakeAPI.auth_token
 
       check_configuration
     end
@@ -20,7 +20,7 @@ module Airbrake
     def self.fetch(path, options)
       response = get(path, { :query => options })
       if response.code == 403
-        raise AirbrakeError.new('SSL should be enabled - use Airbrake.secure = true in configuration')
+        raise AirbrakeError.new('SSL should be enabled - use AirbrakeAPI.secure = true in configuration')
       end
 
       Hashie::Mash.new(response)
