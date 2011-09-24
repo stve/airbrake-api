@@ -25,6 +25,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'simplecov', '~> 0.4.2'
   s.add_development_dependency 'fakeweb', '~> 1.3.0'
   s.add_development_dependency 'nokogiri', '~> 1.4'
+  s.add_development_dependency 'airbrake', '~> 3.0'
+  s.add_development_dependency 'i18n', '~> 0.6.0'
 
   # ensure the gem is built out of versioned files
   s.files         = `git ls-files`.split("\n")
