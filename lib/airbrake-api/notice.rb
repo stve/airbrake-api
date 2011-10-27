@@ -1,7 +1,7 @@
 require 'parallel'
 
-module Airbrake
-  class Notice < Airbrake::Base
+module AirbrakeAPI
+  class Notice < AirbrakeAPI::Base
     PER_PAGE = 30
     PARALLEL_WORKERS = 10
 

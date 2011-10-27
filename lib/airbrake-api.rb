@@ -1,7 +1,7 @@
 require 'hashie'
 require 'httparty'
 
-module Airbrake
+module AirbrakeAPI
   extend self
   attr_accessor :account, :auth_token, :secure
 

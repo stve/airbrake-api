@@ -1,3 +1,3 @@
-module Airbrake
-  VERSION = '3.1.0'
+module AirbrakeAPI
+  VERSION = '3.2.0'
 end

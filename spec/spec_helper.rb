@@ -4,10 +4,15 @@ SimpleCov.start do
   add_group 'Specs', 'spec'
 end
 
-require File.expand_path('../../lib/airbrake-api', __FILE__)
-
 require 'rspec'
 require 'fakeweb'
+
+require 'active_support'
+require 'active_support/core_ext'
+require 'i18n'
+require 'airbrake'
+
+require File.expand_path('../../lib/airbrake-api', __FILE__)
 
 FakeWeb.allow_net_connect = false
 
