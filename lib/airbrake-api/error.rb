@@ -22,7 +22,7 @@ module Airbrake
     def self.update(error, options)
       setup
 
-      response = put(error_path(error), { :query => options })
+      response = put(error_path(error), :body => options)
       if response.code == 403
         raise AirbrakeError.new('SSL should be enabled - use Airbrake.secure = true in configuration')
       end
