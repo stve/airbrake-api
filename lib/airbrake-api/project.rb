@@ -2,7 +2,6 @@ module AirbrakeAPI
   class Project < AirbrakeAPI::Base
 
     def self.find(*args)
-      setup
       options = args.extract_options!
 
       results = fetch(collection_path, options)

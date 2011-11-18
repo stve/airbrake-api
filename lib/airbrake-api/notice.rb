@@ -6,8 +6,6 @@ module AirbrakeAPI
     PARALLEL_WORKERS = 10
 
     def self.find(id, error_id, options={})
-      setup
-
       hash = fetch(find_path(id, error_id), options)
 
       if hash.errors
@@ -18,7 +16,6 @@ module AirbrakeAPI
     end
 
     def self.find_all_by_error_id(error_id, notice_options = {})
-      setup
 
       options = {}
       notices = []
@@ -43,7 +40,6 @@ module AirbrakeAPI
     end
 
     def self.find_by_error_id(error_id, options={ 'page' => 1})
-      setup
 
       hash = fetch(all_path(error_id), options)
       if hash.errors

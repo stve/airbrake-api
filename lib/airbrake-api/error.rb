@@ -2,8 +2,6 @@ module AirbrakeAPI
   class Error < AirbrakeAPI::Base
 
     def self.find(*args)
-      setup
-
       results = case args.first
         when Fixnum
           find_individual(args)
@@ -20,8 +18,6 @@ module AirbrakeAPI
     end
 
     def self.update(error, options)
-      setup
-
       response = put(error_path(error), :body => options)
       if response.code == 403
         raise AirbrakeError.new('SSL should be enabled - use Airbrake.secure = true in configuration')

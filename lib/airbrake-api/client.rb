@@ -18,6 +18,8 @@ module AirbrakeAPI
     end
 
     def self.fetch(path, options)
+      setup
+
       response = get(path, { :query => options })
       if response.code == 403
         raise AirbrakeError.new('SSL should be enabled - use AirbrakeAPI.secure = true in configuration')
