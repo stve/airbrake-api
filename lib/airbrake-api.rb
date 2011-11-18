@@ -21,6 +21,12 @@ module AirbrakeAPI
     secure ? "https" : "http"
   end
 
+  def reset
+    @account = nil
+    @auth_token = nil
+    @secure = false
+  end
+
 end
 
 require 'airbrake-api/core_extensions'

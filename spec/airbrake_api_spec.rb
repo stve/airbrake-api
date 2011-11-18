@@ -4,9 +4,7 @@ describe AirbrakeAPI do
 
   context "configuration" do
     before(:each) do
-      AirbrakeAPI.account = nil
-      AirbrakeAPI.auth_token = nil
-      AirbrakeAPI.secure = false
+      AirbrakeAPI.reset
     end
 
     it "should allow setting of the account" do
