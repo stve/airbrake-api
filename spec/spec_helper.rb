@@ -45,6 +45,9 @@ fixture_request :get, "http://myapp.airbrakeapp.com/errors/1696171/notices/1234.
 # projects
 fixture_request :get, "http://myapp.airbrakeapp.com/data_api/v1/projects.xml?auth_token=abcdefg123456", 'projects.xml'
 
+# deploys
+fixture_request :get, "http://myapp.airbrakeapp.com/projects/12345/deploys.xml?auth_token=abcdefg123456", 'deploys.xml'
+
 # ssl responses
 fixture_request :get, "https://sslapp.airbrakeapp.com/errors/1696170.xml?auth_token=abcdefg123456", 'individual_error.xml'
 FakeWeb.register_uri(:get, "http://sslapp.airbrakeapp.com/errors/1696170.xml?auth_token=abcdefg123456", DEFAULTS.merge(:body => " ", :status => ["403", "Forbidden"]))

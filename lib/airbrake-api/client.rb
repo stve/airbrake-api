@@ -1,9 +1,10 @@
 module AirbrakeAPI
-  class Base
+  class Client
     include HTTParty
     format :xml
 
-    private
+    PER_PAGE = 30
+    PARALLEL_WORKERS = 10
 
     def self.setup
       base_uri AirbrakeAPI.account_path
@@ -26,6 +27,115 @@ module AirbrakeAPI
       end
 
       Hashie::Mash.new(response)
+    end
+
+    # deploys
+
+    def deploys(project_id, options = {})
+      results = self.class.fetch("/projects/#{project_id}/deploys.xml", options)
+      raise AirbrakeError.new(results.errors.error) if results.errors
+      results.projects.deploy
+    end
+
+    # projects
+    def projects_path
+      '/data_api/v1/projects.xml'
+    end
+
+    def projects(options = {})
+      results = self.class.fetch(projects_path, options)
+
+      raise AirbrakeError.new(results.errors.error) if results.errors
+      results.projects.project
+    end
+
+    # errors
+
+    def error_path(error_id)
+      "/errors/#{error_id}.xml"
+    end
+
+    def errors_path
+      '/errors.xml'
+    end
+
+    def update(error, options = {})
+      response = self.class.put(error_path(error), :body => options)
+      if response.code == 403
+        raise AirbrakeError.new('SSL should be enabled - use Airbrake.secure = true in configuration')
+      end
+      results = Hashie::Mash.new(response)
+
+      raise AirbrakeError.new(results.errors.error) if results.errors
+      results.group
+    end
+
+    def error(error_id, options = {})
+      results = self.class.fetch(error_path(error_id), options)
+
+      raise AirbrakeError.new('No results found.') if results.nil?
+      raise AirbrakeError.new(results.errors.error) if results.errors
+
+      results.group || results.groups
+    end
+
+    def errors(options = {})
+      results = self.class.fetch(errors_path, options)
+
+      raise AirbrakeError.new('No results found.') if results.nil?
+      raise AirbrakeError.new(results.errors.error) if results.errors
+
+      results.group || results.groups
+    end
+
+    # notices
+
+    def notice_path(notice_id, error_id)
+      "/errors/#{error_id}/notices/#{notice_id}.xml"
+    end
+
+    def notices_path(error_id)
+      "/errors/#{error_id}/notices.xml"
+    end
+
+    def notice(notice_id, error_id, options = {})
+      hash = self.class.fetch(notice_path(notice_id, error_id), options)
+
+      raise AirbrakeError.new(results.errors.error) if hash.errors
+
+      hash.notice
+    end
+
+    def notices(error_id, options = {})
+      options['page'] ||= 1
+      hash = self.class.fetch(notices_path(error_id), options)
+
+      raise AirbrakeError.new(results.errors.error) if hash.errors
+
+      hash.notices
+    end
+
+    def all_notices(error_id, notice_options = {}, &block)
+      options = {}
+      notices = []
+      page = 1
+      while !notice_options[:pages] || page <= notice_options[:pages]
+        options[:page] = page
+        hash = self.class.fetch(notices_path(error_id), options)
+        if hash.errors
+          raise AirbrakeError.new(results.errors.error)
+        end
+
+        batch = Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
+          notice(notice_stub.id, error_id)
+        end
+        yield batch if block_given?
+        batch.each{|n| notices << n }
+
+        break if batch.size < PER_PAGE
+        page += 1
+      end
+      notices
     end
 
   end

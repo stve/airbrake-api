@@ -1,54 +1,42 @@
 module AirbrakeAPI
-  class Error < AirbrakeAPI::Base
+  class Error
 
     def self.find(*args)
+      deprecate('Error.find has been deprecated; use AibrakeAPI::Client#error and AibrakeAPI::Client#errors instead')
+
       results = case args.first
         when Fixnum
-          find_individual(args)
+          id = args.shift
+          options = args.extract_options!
+          AirbrakeAPI::Client.new.error(id, options)
         when :all
-          find_all(args)
+          options = args.extract_options!
+          AirbrakeAPI::Client.new.errors(options)
         else
           raise AirbrakeError.new('Invalid argument')
       end
 
-      raise AirbrakeError.new('No results found.') if results.nil?
-      raise AirbrakeError.new(results.errors.error) if results.errors
-
-      results.group || results.groups
+      results
     end
 
+    # @deprecated Please use {AirbrakeAPI::Client#update} instead
     def self.update(error, options)
-      response = put(error_path(error), :body => options)
-      if response.code == 403
-        raise AirbrakeError.new('SSL should be enabled - use Airbrake.secure = true in configuration')
-      end
-      results = Hashie::Mash.new(response)
-
-      raise AirbrakeError.new(results.errors.error) if results.errors
-      results.group
-    end
-
-    private
-
-    def self.find_all(args)
-      options = args.extract_options!
-
-      fetch(collection_path, options)
-    end
-
-    def self.find_individual(args)
-      id = args.shift
-      options = args.extract_options!
-
-      fetch(error_path(id), options)
+      deprecate('Error.update has been deprecated; use AibrakeAPI::Client#update instead')
+      AirbrakeAPI::Client.new.update(error, options)
     end
 
     def self.collection_path
-      '/errors.xml'
+      deprecate('Error.collection_path has been deprecated; use AibrakeAPI::Client#collection_path instead')
+      AirbrakeAPI::Client.new.errors_path
     end
 
     def self.error_path(error_id)
-      "/errors/#{error_id}.xml"
+      deprecate('Error.error_path has been deprecated; use AibrakeAPI::Client#error_path instead')
+      AirbrakeAPI::Client.new.error_path(error_id)
+    end
+
+    def self.deprecate(msg)
+      Kernel.warn("[Deprecation] - #{msg}")
     end
 
   end
