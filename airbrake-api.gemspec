@@ -15,7 +15,7 @@ Gem::Specification.new do |s|
   s.homepage  = 'https://github.com/spagalloco/airbrake-api'
 
   s.add_dependency 'httparty', '~> 0.8.0'
-  s.add_dependency 'hashie', '~> 1.1.0'
+  s.add_dependency 'hashie', '~> 1.2'
   s.add_dependency 'parallel', '~> 0.5.0'
 
   s.add_development_dependency 'rake', '~> 0.9.2'
