@@ -13,8 +13,12 @@ module AirbrakeAPI
     @secure = options[:secure] if options.has_key?(:secure)
   end
 
+  def options
+    { :auth_token => @auth_token, :account_path => account_path }
+  end
+
   def account_path
-    "#{protocol}://#{@account}.airbrakeapp.com"
+    "#{protocol}://#{@account}.airbrake.io"
   end
 
   def protocol
