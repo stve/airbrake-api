@@ -1,38 +1,26 @@
+require 'faraday_middleware'
+require 'airbrake-api/middleware/scrub_response'
+require 'airbrake-api/middleware/raise_server_error'
+
 module AirbrakeAPI
   class Client
-    include HTTParty
-    format :xml
 
     PER_PAGE = 30
     PARALLEL_WORKERS = 10
 
-    def self.setup
-      base_uri AirbrakeAPI.account_path
-      default_params :auth_token => AirbrakeAPI.auth_token
+    attr_accessor *AirbrakeAPI::Configuration::VALID_OPTIONS_KEYS
 
-      check_configuration
-    end
-
-    def self.check_configuration
-      raise AirbrakeError.new('API Token cannot be nil') if default_options.nil? || default_options[:default_params].nil? || !default_options[:default_params].has_key?(:auth_token)
-      raise AirbrakeError.new('Account cannot be nil') unless default_options.has_key?(:base_uri)
-    end
-
-    def self.fetch(path, options)
-      setup
-
-      response = get(path, { :query => options })
-      if response.code == 403
-        raise AirbrakeError.new('SSL should be enabled - use AirbrakeAPI.secure = true in configuration')
+    def initialize(options={})
+      attrs = AirbrakeAPI.options.merge(options)
+      AirbrakeAPI::Configuration::VALID_OPTIONS_KEYS.each do |key|
+        instance_variable_set("@#{key}".to_sym, attrs[key])
       end
-
-      Hashie::Mash.new(response)
     end
 
     # deploys
 
     def deploys(project_id, options = {})
-      results = self.class.fetch("/projects/#{project_id}/deploys.xml", options)
+      results = get("/projects/#{project_id}/deploys.xml", options)
       raise AirbrakeError.new(results.errors.error) if results.errors
       results.projects.deploy
     end
@@ -43,7 +31,7 @@ module AirbrakeAPI
     end
 
     def projects(options = {})
-      results = self.class.fetch(projects_path, options)
+      results = get(projects_path, options)
 
       raise AirbrakeError.new(results.errors.error) if results.errors
       results.projects.project
@@ -60,27 +48,23 @@ module AirbrakeAPI
     end
 
     def update(error, options = {})
-      response = self.class.put(error_path(error), :body => options)
-      if response.code == 403
-        raise AirbrakeError.new('SSL should be enabled - use Airbrake.secure = true in configuration')
-      end
-      results = Hashie::Mash.new(response)
-
+      results = put(error_path(error), :body => options)
       raise AirbrakeError.new(results.errors.error) if results.errors
       results.group
     end
 
     def error(error_id, options = {})
-      results = self.class.fetch(error_path(error_id), options)
+      results = get(error_path(error_id), options)
 
       raise AirbrakeError.new('No results found.') if results.nil?
       raise AirbrakeError.new(results.errors.error) if results.errors
 
+      results
       results.group || results.groups
     end
 
     def errors(options = {})
-      results = self.class.fetch(errors_path, options)
+      results = get(errors_path, options)
 
       raise AirbrakeError.new('No results found.') if results.nil?
       raise AirbrakeError.new(results.errors.error) if results.errors
@@ -99,7 +83,7 @@ module AirbrakeAPI
     end
 
     def notice(notice_id, error_id, options = {})
-      hash = self.class.fetch(notice_path(notice_id, error_id), options)
+      hash = get(notice_path(notice_id, error_id), options)
 
       raise AirbrakeError.new(results.errors.error) if hash.errors
 
@@ -108,7 +92,7 @@ module AirbrakeAPI
 
     def notices(error_id, options = {})
       options['page'] ||= 1
-      hash = self.class.fetch(notices_path(error_id), options)
+      hash = get(notices_path(error_id), options)
 
       raise AirbrakeError.new(results.errors.error) if hash.errors
 
@@ -121,7 +105,7 @@ module AirbrakeAPI
       page = 1
       while !notice_options[:pages] || page <= notice_options[:pages]
         options[:page] = page
-        hash = self.class.fetch(notices_path(error_id), options)
+        hash = get(notices_path(error_id), options)
         if hash.errors
           raise AirbrakeError.new(results.errors.error)
         end
@@ -138,16 +122,77 @@ module AirbrakeAPI
       notices
     end
 
-  end
-end
+    private
 
-# airbrake sometimes returns broken xml with invalid xml tag names
-# so we remove them
-require 'httparty/parser'
-class HTTParty::Parser
-  def xml
-    body.gsub!(/<__utmz>.*?<\/__utmz>/m,'')
-    body.gsub!(/<[0-9]+.*?>.*?<\/[0-9]+.*?>/m,'')
-    MultiXml.parse(body)
+    def account_path
+      "#{protocol}://#{@account}.airbrake.io"
+    end
+
+    def protocol
+      @secure ? "https" : "http"
+    end
+
+    # Perform an HTTP DELETE request
+    def delete(path, params={}, options={})
+      request(:delete, path, params, options)
+    end
+
+    # Perform an HTTP GET request
+    def get(path, params={}, options={})
+      request(:get, path, params, options)
+    end
+
+    # Perform an HTTP POST request
+    def post(path, params={}, options={})
+      request(:post, path, params, options)
+    end
+
+    # Perform an HTTP PUT request
+    def put(path, params={}, options={})
+      request(:put, path, params, options)
+    end
+
+    # Perform an HTTP request
+    def request(method, path, params, options)
+
+      raise AirbrakeError.new('API Token cannot be nil') if @auth_token.nil?
+      raise AirbrakeError.new('Account cannot be nil') if @account.nil?
+
+      params.merge!(:auth_token => @auth_token)
+
+      response = connection(options).run_request(method, nil, nil, nil) do |request|
+        case method.to_sym
+        when :delete, :get
+          request.url(path, params)
+        when :post, :put
+          request.path = path
+          request.body = params unless params.empty?
+        end
+      end
+      response.body
+    end
+
+    def connection(options={})
+      default_options = {
+        :headers => {
+          :accept => 'application/xml',
+          :user_agent => 'AirbrakeAPI Rubygem',
+        },
+        # :proxy => proxy,
+        :ssl => {:verify => false},
+        :url => account_path,
+      }
+      connection_options = {}
+      @connection ||= Faraday.new(default_options.deep_merge(connection_options)) do |builder|
+        builder.use Faraday::Request::UrlEncoded
+        builder.use FaradayMiddleware::Mashify
+        builder.use FaradayMiddleware::ParseXml
+        builder.use AirbrakeAPI::Middleware::ScrubResponse
+        builder.use AirbrakeAPI::Middleware::RaiseServerError
+
+        builder.adapter Faraday.default_adapter
+      end
+    end
+
   end
 end

@@ -39,4 +39,12 @@ describe AirbrakeAPI::Notice do
   it "should find a broken notices" do
     AirbrakeAPI::Notice.find(666, 1696170).should_not == nil
   end
+
+  it 'defines the notices path' do
+    AirbrakeAPI::Notice.all_path(1696170).should eq('/errors/1696170/notices.xml')
+  end
+
+  it 'defines the an individual notices path' do
+    AirbrakeAPI::Notice.find_path(666, 1696170).should eq('/errors/1696170/notices/666.xml')
+  end
 end

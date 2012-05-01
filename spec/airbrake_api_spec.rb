@@ -34,6 +34,18 @@ describe AirbrakeAPI do
       AirbrakeAPI.account.should == 'anapp'
       AirbrakeAPI.account_path.should == 'https://anapp.airbrake.io'
     end
+
+    it 'takes a block' do
+      AirbrakeAPI.configure do |config|
+        config.account = 'anapp'
+        config.auth_token = 'abcdefghij'
+        config.secure = true
+      end
+
+      AirbrakeAPI.protocol.should == 'https'
+      AirbrakeAPI.auth_token.should == 'abcdefghij'
+      AirbrakeAPI.account.should == 'anapp'
+    end
   end
 
   context "when using SSL" do
