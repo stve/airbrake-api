@@ -40,6 +40,7 @@ fixture_request :get, "http://myapp.airbrakeapp.com/errors/1696171/notices.xml?a
 fixture_request :get, "http://myapp.airbrakeapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=2", 'notices.xml'
 fixture_request :get, "http://myapp.airbrakeapp.com/errors/1696171/notices.xml?auth_token=abcdefg123456&page=3", 'paginated_notices.xml'
 fixture_request :get, "http://myapp.airbrakeapp.com/errors/1696171/notices/1234.xml?auth_token=abcdefg123456", 'notices.xml'
+fixture_request :get, "http://myapp.airbrakeapp.com/errors/1696172/notices.xml?auth_token=abcdefg123456&page=1", 'unauthorized.xml'
 
 
 # projects

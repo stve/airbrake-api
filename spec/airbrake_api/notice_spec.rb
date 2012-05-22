@@ -18,6 +18,12 @@ describe AirbrakeAPI::Notice do
     notices.size.should == 42
   end
 
+  it "should fail with errors" do
+    expect {
+      AirbrakeAPI::Notice.find_all_by_error_id(1696172)
+    }.to raise_error(AirbrakeAPI::AirbrakeError, /You are not authorized to see that page/)
+  end
+
   it "should find all error notices with a page limit" do
     notices = AirbrakeAPI::Notice.find_all_by_error_id(1696171, :pages => 2)
     notices.size.should == 60

@@ -27,7 +27,7 @@ module AirbrakeAPI
         options[:page] = page
         hash = fetch(all_path(error_id), options)
         if hash.errors
-          raise AirbrakeError.new(results.errors.error)
+          raise AirbrakeError.new(hash.errors.error)
         end
 
         batch = Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
