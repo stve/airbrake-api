@@ -1,7 +1,9 @@
-require 'simplecov'
-SimpleCov.start do
-  add_group 'Airbrake API', 'lib/airbrake-api'
-  add_group 'Specs', 'spec'
+unless ENV['CI']
+  require 'simplecov'
+  SimpleCov.start do
+    add_group 'Airbrake API', 'lib/airbrake-api'
+    add_group 'Specs', 'spec'
+  end
 end
 
 require 'rspec'
