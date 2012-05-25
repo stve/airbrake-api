@@ -10,10 +10,10 @@ module AirbrakeAPI
       results = case args.first
         when Fixnum
           id = args.shift
-          options = args.extract_options!
+          options = args.last.is_a?(::Hash) ? args.pop : {}
           AirbrakeAPI::Client.new.error(id, options)
         when :all
-          options = args.extract_options!
+          options = args.last.is_a?(::Hash) ? args.pop : {}
           AirbrakeAPI::Client.new.errors(options)
         else
           raise AirbrakeError.new('Invalid argument')

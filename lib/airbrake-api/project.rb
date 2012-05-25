@@ -6,7 +6,7 @@ module AirbrakeAPI
     # @deprecated Please use {AirbrakeAPI::Client::projects} instead
     def self.find(*args)
       deprecate('Project.find has been deprecated; use AibrakeAPI::Client.projects instead')
-      options = args.extract_options!
+      options = args.last.is_a?(::Hash) ? args.pop : {}
       AirbrakeAPI::Client.new.projects(options)
     end
 

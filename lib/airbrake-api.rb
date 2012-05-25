@@ -7,7 +7,6 @@ module AirbrakeAPI
 
 end
 
-require 'airbrake-api/core_extensions'
 require 'airbrake-api/client'
 require 'airbrake-api/error'
 require 'airbrake-api/notice'
