@@ -69,6 +69,12 @@ describe AirbrakeAPI::Client do
       @client = AirbrakeAPI::Client.new
     end
 
+    it "should fail with errors" do
+      expect {
+        @client.notices(1696172)
+      }.to raise_error(AirbrakeAPI::AirbrakeError, /You are not authorized to see that page/)
+    end
+
     describe '#deploys' do
       it 'returns an array of deploys' do
         @client.deploys('12345').should be_kind_of(Array)

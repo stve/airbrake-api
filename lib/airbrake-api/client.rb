@@ -1,6 +1,7 @@
 require 'faraday_middleware'
 require 'airbrake-api/middleware/scrub_response'
 require 'airbrake-api/middleware/raise_server_error'
+require 'airbrake-api/middleware/raise_response_error'
 
 module AirbrakeAPI
   class Client
@@ -21,7 +22,6 @@ module AirbrakeAPI
 
     def deploys(project_id, options = {})
       results = get("/projects/#{project_id}/deploys.xml", options)
-      raise AirbrakeError.new(results.errors.error) if results.errors
       results.projects.deploy
     end
 
@@ -32,8 +32,6 @@ module AirbrakeAPI
 
     def projects(options = {})
       results = get(projects_path, options)
-
-      raise AirbrakeError.new(results.errors.error) if results.errors
       results.projects.project
     end
 
@@ -49,7 +47,6 @@ module AirbrakeAPI
 
     def update(error, options = {})
       results = put(error_path(error), :body => options)
-      raise AirbrakeError.new(results.errors.error) if results.errors
       results.group
     end
 
@@ -57,7 +54,6 @@ module AirbrakeAPI
       results = get(error_path(error_id), options)
 
       raise AirbrakeError.new('No results found.') if results.nil?
-      raise AirbrakeError.new(results.errors.error) if results.errors
 
       results
       results.group || results.groups
@@ -67,7 +63,6 @@ module AirbrakeAPI
       results = get(errors_path, options)
 
       raise AirbrakeError.new('No results found.') if results.nil?
-      raise AirbrakeError.new(results.errors.error) if results.errors
 
       results.group || results.groups
     end
@@ -84,18 +79,12 @@ module AirbrakeAPI
 
     def notice(notice_id, error_id, options = {})
       hash = get(notice_path(notice_id, error_id), options)
-
-      raise AirbrakeError.new(results.errors.error) if hash.errors
-
       hash.notice
     end
 
     def notices(error_id, options = {})
       options['page'] ||= 1
       hash = get(notices_path(error_id), options)
-
-      raise AirbrakeError.new(results.errors.error) if hash.errors
-
       hash.notices
     end
 
@@ -106,9 +95,6 @@ module AirbrakeAPI
       while !notice_options[:pages] || page <= notice_options[:pages]
         options[:page] = page
         hash = get(notices_path(error_id), options)
-        if hash.errors
-          raise AirbrakeError.new(results.errors.error)
-        end
 
         batch = Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
           notice(notice_stub.id, error_id)
@@ -185,6 +171,7 @@ module AirbrakeAPI
       connection_options = {}
       @connection ||= Faraday.new(default_options.deep_merge(connection_options)) do |builder|
         builder.use Faraday::Request::UrlEncoded
+        builder.use AirbrakeAPI::Middleware::RaiseResponseError
         builder.use FaradayMiddleware::Mashify
         builder.use FaradayMiddleware::ParseXml
         builder.use AirbrakeAPI::Middleware::ScrubResponse
