@@ -21,8 +21,12 @@ module AirbrakeAPI
     # deploys
 
     def deploys(project_id, options = {})
-      results = get("/projects/#{project_id}/deploys.xml", options)
+      results = request(:get, deploys_path(project_id), options)
       results.projects.deploy
+    end
+
+    def deploys_path(project_id)
+      "/projects/#{project_id}/deploys.xml"
     end
 
     # projects
@@ -31,7 +35,7 @@ module AirbrakeAPI
     end
 
     def projects(options = {})
-      results = get(projects_path, options)
+      results = request(:get, projects_path, options)
       results.projects.project
     end
 
@@ -46,21 +50,20 @@ module AirbrakeAPI
     end
 
     def update(error, options = {})
-      results = put(error_path(error), :body => options)
+      results = request(:put, error_path(error), :body => options)
       results.group
     end
 
     def error(error_id, options = {})
-      results = get(error_path(error_id), options)
+      results = request(:get, error_path(error_id), options)
 
       raise AirbrakeError.new('No results found.') if results.nil?
 
-      results
       results.group || results.groups
     end
 
     def errors(options = {})
-      results = get(errors_path, options)
+      results = request(:get, errors_path, options)
 
       raise AirbrakeError.new('No results found.') if results.nil?
 
@@ -78,13 +81,13 @@ module AirbrakeAPI
     end
 
     def notice(notice_id, error_id, options = {})
-      hash = get(notice_path(notice_id, error_id), options)
+      hash = request(:get, notice_path(notice_id, error_id), options)
       hash.notice
     end
 
     def notices(error_id, options = {})
       options['page'] ||= 1
-      hash = get(notices_path(error_id), options)
+      hash = request(:get, notices_path(error_id), options)
       hash.notices
     end
 
@@ -94,7 +97,7 @@ module AirbrakeAPI
       page = 1
       while !notice_options[:pages] || page <= notice_options[:pages]
         options[:page] = page
-        hash = get(notices_path(error_id), options)
+        hash = request(:get, notices_path(error_id), options)
 
         batch = Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
           notice(notice_stub.id, error_id)
@@ -118,18 +121,8 @@ module AirbrakeAPI
       @secure ? "https" : "http"
     end
 
-    # Perform an HTTP GET request
-    def get(path, params={}, options={})
-      request(:get, path, params, options)
-    end
-
-    # Perform an HTTP PUT request
-    def put(path, params={}, options={})
-      request(:put, path, params, options)
-    end
-
     # Perform an HTTP request
-    def request(method, path, params, options)
+    def request(method, path, params = {}, options = {})
 
       raise AirbrakeError.new('API Token cannot be nil') if @auth_token.nil?
       raise AirbrakeError.new('Account cannot be nil') if @account.nil?
