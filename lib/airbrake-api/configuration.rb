@@ -12,8 +12,12 @@ module AirbrakeAPI
 
     attr_accessor *VALID_OPTIONS_KEYS
 
-    DEFAULT_ADAPTER = :net_http
-    DEFAULT_USER_AGENT = "AirbrakeAPI Ruby Gem #{AirbrakeAPI::VERSION}"
+    DEFAULT_ADAPTER     = :net_http
+    DEFAULT_USER_AGENT  = "AirbrakeAPI Ruby Gem #{AirbrakeAPI::VERSION}"
+
+    def self.extended(base)
+      base.reset
+    end
 
     def configure(options={})
       @account    = options[:account] if options.has_key?(:account)
