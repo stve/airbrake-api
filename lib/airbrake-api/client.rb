@@ -118,19 +118,9 @@ module AirbrakeAPI
       @secure ? "https" : "http"
     end
 
-    # Perform an HTTP DELETE request
-    def delete(path, params={}, options={})
-      request(:delete, path, params, options)
-    end
-
     # Perform an HTTP GET request
     def get(path, params={}, options={})
       request(:get, path, params, options)
-    end
-
-    # Perform an HTTP POST request
-    def post(path, params={}, options={})
-      request(:post, path, params, options)
     end
 
     # Perform an HTTP PUT request
@@ -162,7 +152,7 @@ module AirbrakeAPI
       default_options = {
         :headers => {
           :accept => 'application/xml',
-          :user_agent => 'AirbrakeAPI Rubygem',
+          :user_agent => user_agent,
         },
         # :proxy => proxy,
         :ssl => {:verify => false},
@@ -177,7 +167,7 @@ module AirbrakeAPI
         builder.use AirbrakeAPI::Middleware::ScrubResponse
         builder.use AirbrakeAPI::Middleware::RaiseServerError
 
-        builder.adapter Faraday.default_adapter
+        builder.adapter adapter
       end
     end
 

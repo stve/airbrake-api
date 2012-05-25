@@ -33,7 +33,9 @@ describe AirbrakeAPI::Client do
             :account => 'test',
             :auth_token => 'token',
             :secure => true,
-            :connection_options => {}
+            :connection_options => {},
+            :adapter => :em_http,
+            :user_agent => 'Airbrake API Tests'
           }
         end
 
