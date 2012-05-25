@@ -56,17 +56,11 @@ module AirbrakeAPI
 
     def error(error_id, options = {})
       results = request(:get, error_path(error_id), options)
-
-      raise AirbrakeError.new('No results found.') if results.nil?
-
       results.group || results.groups
     end
 
     def errors(options = {})
       results = request(:get, errors_path, options)
-
-      raise AirbrakeError.new('No results found.') if results.nil?
-
       results.group || results.groups
     end
 
