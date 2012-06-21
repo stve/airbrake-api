@@ -145,7 +145,6 @@ module AirbrakeAPI
         :ssl => {:verify => false},
         :url => account_path,
       }
-      connection_options = {}
       @connection ||= Faraday.new(default_options.deep_merge(connection_options)) do |builder|
         builder.use Faraday::Request::UrlEncoded
         builder.use AirbrakeAPI::Middleware::RaiseResponseError

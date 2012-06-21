@@ -14,6 +14,7 @@ module AirbrakeAPI
 
     DEFAULT_ADAPTER     = :net_http
     DEFAULT_USER_AGENT  = "AirbrakeAPI Ruby Gem #{AirbrakeAPI::VERSION}"
+    DEFAULT_CONNECTION_OPTIONS = {}
 
     def self.extended(base)
       base.reset
@@ -47,6 +48,7 @@ module AirbrakeAPI
       @secure     = false
       @adapter    = DEFAULT_ADAPTER
       @user_agent = DEFAULT_USER_AGENT
+      @connection_options = DEFAULT_CONNECTION_OPTIONS
     end
 
   end
