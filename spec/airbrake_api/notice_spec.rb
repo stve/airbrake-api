@@ -9,7 +9,7 @@ describe AirbrakeAPI::Notice do
 
   it "should find error notices" do
     notices = AirbrakeAPI::Notice.find_by_error_id(1696170)
-    notices.size.should == 30
+    notices.size.should == 42
     notices.first.id.should == 1234
   end
 

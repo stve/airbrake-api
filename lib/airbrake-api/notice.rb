@@ -13,7 +13,7 @@ module AirbrakeAPI
     # @deprecated Please use {AirbrakeAPI::Client::all_notices} instead
     def self.find_all_by_error_id(error_id, notice_options = {}, &block)
       deprecate('Notice.find_all_by_error_id has been deprecated; use AibrakeAPI::Client#all_notices instead')
-      AirbrakeAPI::Client.new.all_notices(error_id, notice_options, &block)
+      AirbrakeAPI::Client.new.notices(error_id, notice_options, &block)
     end
 
     # @deprecated Please use {AirbrakeAPI::Client::notices} instead

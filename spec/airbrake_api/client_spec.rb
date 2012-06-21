@@ -145,27 +145,25 @@ describe AirbrakeAPI::Client do
     end
 
     describe '#notices' do
-      it "finds error notices" do
-        notices = @client.notices(1696170)
-        notices.size.should == 30
-        notices.first.id.should == 1234
-      end
-    end
-
-    describe '#all_notices' do
       it "finds all error notices" do
-        notices = @client.all_notices(1696170)
+        notices = @client.notices(1696170)
         notices.size.should == 42
       end
 
+      it "finds error notices for a specific page" do
+        notices = @client.notices(1696170, :page => 1)
+        notices.size.should == 30
+        notices.first.id.should == 1234
+      end
+
       it "finds all error notices with a page limit" do
-        notices = @client.all_notices(1696171, :pages => 2)
+        notices = @client.notices(1696171, :pages => 2)
         notices.size.should == 60
       end
 
       it "yields batches" do
         batches = []
-        notices = @client.all_notices(1696171, :pages => 2) do |batch|
+        notices = @client.notices(1696171, :pages => 2) do |batch|
           batches << batch
         end
         notices.size.should == 60
