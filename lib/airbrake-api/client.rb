@@ -14,7 +14,7 @@ module AirbrakeAPI
     def initialize(options={})
       attrs = AirbrakeAPI.options.merge(options)
       AirbrakeAPI::Configuration::VALID_OPTIONS_KEYS.each do |key|
-        instance_variable_set("@#{key}".to_sym, attrs[key])
+        send("#{key}=", attrs[key])
       end
     end
 
