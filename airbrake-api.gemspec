@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
   s.email     = ['steve.agalloco@gmail.com']
   s.homepage  = 'https://github.com/spagalloco/airbrake-api'
 
-  s.add_dependency 'hashie', '~> 1.1.0'
+  s.add_dependency 'hashie', '~> 1.2'
   s.add_dependency 'parallel', '~> 0.5.0'
   s.add_dependency 'faraday_middleware', '~> 0.8'
   s.add_dependency 'multi_xml', '~> 0.4'
