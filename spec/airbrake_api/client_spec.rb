@@ -88,6 +88,10 @@ describe AirbrakeAPI::Client do
 
         first_deploy.rails_env.should eq('production')
       end
+      
+      it 'returns empty when no data' do
+        @client.deploys('67890').should be_kind_of(Array)
+      end      
     end
 
     describe '#projects' do
