@@ -49,6 +49,7 @@ fixture_request :get, "http://myapp.airbrake.io/data_api/v1/projects.xml?auth_to
 
 # deploys
 fixture_request :get, "http://myapp.airbrake.io/projects/12345/deploys.xml?auth_token=abcdefg123456", 'deploys.xml'
+fixture_request :get, "http://myapp.airbrake.io/projects/67890/deploys.xml?auth_token=abcdefg123456", 'empty_deploys.xml'
 
 # ssl responses
 fixture_request :get, "https://sslapp.airbrake.io/errors/1696170.xml?auth_token=abcdefg123456", 'individual_error.xml'
