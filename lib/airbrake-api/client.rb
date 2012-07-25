@@ -18,6 +18,20 @@ module AirbrakeAPI
       end
     end
 
+    def url_for(endpoint, *args)
+      path = case endpoint.to_s
+      when 'deploys' then deploys_path(*args)
+      when 'projects' then '/projects'
+      when 'errors' then errors_path
+      when 'error' then error_path(*args)
+      when 'notices' then notices_path(*args)
+      when 'notice' then notice_path(*args)
+      else raise ArgumentError.new("Unrecognized path: #{path}")
+      end
+
+      [account_path, path.split('.').first].join('')
+    end
+
     # deploys
 
     def deploys(project_id, options = {})

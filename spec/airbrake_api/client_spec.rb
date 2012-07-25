@@ -88,10 +88,10 @@ describe AirbrakeAPI::Client do
 
         first_deploy.rails_env.should eq('production')
       end
-      
+
       it 'returns empty when no data' do
         @client.deploys('67890').should be_kind_of(Array)
-      end      
+      end
     end
 
     describe '#projects' do
@@ -173,6 +173,43 @@ describe AirbrakeAPI::Client do
         notices.size.should == 60
         batches.map(&:size).should == [30,30]
       end
+    end
+  end
+
+  describe '#url_for' do
+    before(:all) do
+      options = { :account => 'myapp', :auth_token => 'abcdefg123456', :secure => false }
+      AirbrakeAPI.configure(options)
+
+      @client = AirbrakeAPI::Client.new
+    end
+
+    it 'generates web urls for projects' do
+      @client.url_for(:projects).should eq('http://myapp.airbrake.io/projects')
+    end
+
+    it 'generates web urls for deploys' do
+      @client.url_for(:deploys, '2000').should eq('http://myapp.airbrake.io/projects/2000/deploys')
+    end
+
+    it 'generates web urls for errors' do
+      @client.url_for(:errors).should eq('http://myapp.airbrake.io/errors')
+    end
+
+    it 'generates web urls for individual errors' do
+      @client.url_for(:error, 1696171).should eq('http://myapp.airbrake.io/errors/1696171')
+    end
+
+    it 'generates web urls for notices' do
+      @client.url_for(:notices, 1696171).should eq('http://myapp.airbrake.io/errors/1696171/notices')
+    end
+
+    it 'generates web urls for individual notices' do
+      @client.url_for(:notice, 123, 1696171).should eq('http://myapp.airbrake.io/errors/1696171/notices/123')
+    end
+
+    it 'raises an exception when passed an unknown endpoint' do
+      lambda { @client.url_for(:foo) }.should raise_error(ArgumentError)
     end
   end
 end
