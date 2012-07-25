@@ -2,8 +2,6 @@
 
 A ruby client for the [Airbrake API](http://help.airbrake.io/kb/api-2/api-overview)
 
-## Usage
-
 ## Changes in 4.0
 
 AirbrakeAPI has been completely rewritten in 4.0.  Why the high version number?
@@ -18,6 +16,8 @@ The following classes are now deprecated:
 * `AirbrakeAPI::Error`
 * `AirbrakeAPI::Notice`
 * `AirbrakeAPI::Project`
+
+While your code will continue to work using the old API, they will ultimately be removed in favor of `AirbrakeAPI::Client`.
 
 ## Configuration
 
@@ -77,7 +77,20 @@ To retrieve a list of projects:
 
 ## Deployments
 
+To retrieve a list of deployments: 
+
     AirbrakeAPI.deployments
+
+## Connecting to more than one account
+
+While module-based configuration will work in most cases, if you'd like to simultaneously connect to more than one account at once, you can create instances of `AirbrakeAPI::Client` to do so:
+
+    client = AirbrakeAPI::Client.new(:account => 'myaccount', :auth_token => 'abcdefg', :secure => true)
+    altclient = AirbrakeAPI::Client.new(:account => 'anotheraccount', :auth_token => '123456789', :secure => false)
+    
+    client.errors
+    
+    altclient.projects
 
 ## Responses
 
