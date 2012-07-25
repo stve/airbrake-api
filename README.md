@@ -1,78 +1,102 @@
-Airbrake API [![Build Status](https://secure.travis-ci.org/spagalloco/airbrake-api.png)](http://travis-ci.org/spagalloco/airbrake-api)
-======================================================================================================================================
+# Airbrake API [![Build Status](https://secure.travis-ci.org/spagalloco/airbrake-api.png)](http://travis-ci.org/spagalloco/airbrake-api)
 
-A ruby wrapper for the [Airbrake API](http://airbrakeapp.com/pages/api)
+A ruby client for the [Airbrake API](http://help.airbrake.io/kb/api-2/api-overview)
 
-Usage
------
+## Changes in 4.0
 
-The first thing you need to set is the account name.  This is the same as the web address for your account.
+AirbrakeAPI has been completely rewritten in 4.0.  Why the high version number?
+This was the first gem I ever wrote and it's wandered a path that started with
+ActiveResource, followed by HTTParty, and now Faraday.  Along the way, AirbrakeAPI
+has lost it's ActiveRecord-like syntax for a more concise and simple API.  Instead
+of using classes such as `AirbrakeAPI::Error`, the entire API is contained within
+`AirbrakeAPI::Client`.
 
-    AirbrakeAPI.account = 'myaccount'
+The following classes are now deprecated:
 
-Then, you should set the authentication token.
+* `AirbrakeAPI::Error`
+* `AirbrakeAPI::Notice`
+* `AirbrakeAPI::Project`
 
-    AirbrakeAPI.auth_token = 'abcdefg'
+While your code will continue to work using the old API, they will ultimately be removed in favor of `AirbrakeAPI::Client`.
 
-If your account uses ssl then turn it on:
+## Configuration
 
-    AirbrakeAPI.secure = true
-
-Optionally, you can configure through a single method:
+AirbrakeAPI can be configured by passing a hash to the configure method:
 
     AirbrakeAPI.configure(:account => 'anapp', :auth_token => 'abcdefg', :secure => true)
 
-Once you've configured authentication, you can make calls against the API.  If no token or authentication is given, an AirbrakeError exception will be raised.
+or via a block:
 
-Finding Errors
---------------
+    AirbrakeAPI.configure do |config|
+      config.account = 'anapp'
+      config.auth_token = 'abcdefg'
+      config.secure = true
+    end
+
+## Finding Errors
 
 Errors are paginated, the API responds with 25 at a time, pass an optional params hash for additional pages:
 
-    AirbrakeAPI::Error.find(:all)
-    AirbrakeAPI::Error.find(:all, :page => 2)
+    AirbrakeAPI.errors
+    AirbrakeAPI.errors(:page => 2)
 
 To find an individual error, you can find by ID:
 
-    AirbrakeAPI::Error.find(error_id)
+    AirbrakeAPI.error(error_id)
+
+
+## Finding Notices
 
 Find *all* notices of an error:
 
-    AirbrakeAPI::Notice.find_all_by_error_id(error_id)
+    AirbrakeAPI.notices(error_id)
 
 Find an individual notice:
 
-    AirbrakeAPI::Notice.find(notice_id, error_id)
+    AirbrakeAPI.notice(notice_id, error_id)
 
 To resolve an error via the API:
 
-    AirbrakeAPI::Error.update(1696170, :group => { :resolved => true})
+    AirbrakeAPI.update(1696170, :group => { :resolved => true})
 
 Recreate an error:
 
     STDOUT.sync = true
-    AirbrakeAPI::Notice.find_all_by_error_id(error_id) do |batch|
+    AirbrakeAPI.notices(error_id) do |batch|
       batch.each do |notice|
         result = system "curl --silent '#{notice.request.url}' > /dev/null"
         print (result ? '.' : 'F')
       end
     end
 
-Projects
---------
+## Projects
 
 To retrieve a list of projects:
 
-    AirbrakeAPI::Project.find(:all)
+    AirbrakeAPI.projects
 
-Responses
----------
+## Deployments
 
-If an error is returned from the API, an AirbrakeError will be raised.  Successful responses will return a Hashie::Mash object based on the data from the response.
+To retrieve a list of deployments: 
 
+    AirbrakeAPI.deployments
 
-Contributors
-------------
+## Connecting to more than one account
+
+While module-based configuration will work in most cases, if you'd like to simultaneously connect to more than one account at once, you can create instances of `AirbrakeAPI::Client` to do so:
+
+    client = AirbrakeAPI::Client.new(:account => 'myaccount', :auth_token => 'abcdefg', :secure => true)
+    altclient = AirbrakeAPI::Client.new(:account => 'anotheraccount', :auth_token => '123456789', :secure => false)
+    
+    client.errors
+    
+    altclient.projects
+
+## Responses
+
+If an error is returned from the API, an AirbrakeError exception will be raised.  Successful responses will return a Hashie::Mash object based on the data from the response.
+
+## Contributors
 
 * [Matias Käkelä](https://github.com/massive) - SSL Support
 * [Jordan Brough](https://github.com/jordan-brough) - Notices

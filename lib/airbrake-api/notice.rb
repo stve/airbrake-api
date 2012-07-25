@@ -1,66 +1,38 @@
 require 'parallel'
+require 'airbrake-api/base'
 
 module AirbrakeAPI
-  class Notice < AirbrakeAPI::Base
-    PER_PAGE = 30
-    PARALLEL_WORKERS = 10
+  class Notice < Base
 
-    def self.find(id, error_id, options={})
-      setup
-
-      hash = fetch(find_path(id, error_id), options)
-
-      if hash.errors
-        raise AirbrakeError.new(results.errors.error)
-      end
-
-      hash.notice
+    # @deprecated Please use {AirbrakeAPI::Client::notice} instead
+    def self.find(id, error_id, options = {})
+      deprecate('Notice.find has been deprecated; use AibrakeAPI::Client#notice instead')
+      AirbrakeAPI::Client.new.notice(id, error_id, options)
     end
 
-    def self.find_all_by_error_id(error_id, notice_options = {})
-      setup
-
-      options = {}
-      notices = []
-      page = 1
-      while !notice_options[:pages] || page <= notice_options[:pages]
-        options[:page] = page
-        hash = fetch(all_path(error_id), options)
-        if hash.errors
-          raise AirbrakeError.new(hash.errors.error)
-        end
-
-        batch = Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
-          find(notice_stub.id, error_id)
-        end
-        yield batch if block_given?
-        batch.each{|n| notices << n }
-
-        break if batch.size < PER_PAGE
-        page += 1
-      end
-      notices
+    # @deprecated Please use {AirbrakeAPI::Client::all_notices} instead
+    def self.find_all_by_error_id(error_id, notice_options = {}, &block)
+      deprecate('Notice.find_all_by_error_id has been deprecated; use AibrakeAPI::Client#all_notices instead')
+      AirbrakeAPI::Client.new.notices(error_id, notice_options, &block)
     end
 
-    def self.find_by_error_id(error_id, options={ 'page' => 1})
-      setup
-
-      hash = fetch(all_path(error_id), options)
-      if hash.errors
-        raise AirbrakeError.new(results.errors.error)
-      end
-
-      hash.notices
+    # @deprecated Please use {AirbrakeAPI::Client::notices} instead
+    def self.find_by_error_id(error_id, options = {})
+      deprecate('Notice.find_by_error_id has been deprecated; use AibrakeAPI::Client#notices instead')
+      AirbrakeAPI::Client.new.notices(error_id, options)
     end
 
-    private
-
+    # @deprecated Please use {AirbrakeAPI::Client::notice_path} instead
     def self.find_path(id, error_id)
-      "/errors/#{error_id}/notices/#{id}.xml"
+      deprecate('Notice.find_path has been deprecated; use AibrakeAPI::Client#notice_path instead')
+      AirbrakeAPI::Client.new.notice_path(id, error_id)
     end
 
+    # @deprecated Please use {AirbrakeAPI::Client::notices_path} instead
     def self.all_path(error_id)
-      "/errors/#{error_id}/notices.xml"
+      deprecate('Notice.all_path has been deprecated; use AibrakeAPI::Client#notices_path instead')
+      AirbrakeAPI::Client.new.notices_path(error_id)
     end
+
   end
 end

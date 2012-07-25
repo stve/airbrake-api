@@ -5,7 +5,7 @@ HTTP/1.1 200 OK
   <created-at type="datetime">2010-05-21T13:40:00Z</created-at>
   <error-message>NoMethodError: undefined method `timezone_adjusted_traded_at' for nil:NilClass</error-message>
   <group-id type="integer">1827573</group-id>
-  <id type="integer">294426853</id>
+  <id type="integer">1234</id>
   <project-id type="integer">248</project-id>
   <updated-at type="datetime">2010-05-21T13:40:00Z</updated-at>
   <environment>
@@ -17,7 +17,7 @@ HTTP/1.1 200 OK
     <passenger-app-spawner-idle-time>0</passenger-app-spawner-idle-time>
     <http-user-agent>Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)</http-user-agent>
     <rack-run-once>false</rack-run-once>
-    <path-info>/company/qek-la/trade_notes</path-info>
+    <path-info>/notes</path-info>
     <http-te>chunked;q=1.0</http-te>
     <rack-input>#&lt;Rack::RewindableInput:0x2ad2d6d0b9d8&gt;</rack-input>
     <content-length>0</content-length>
@@ -27,7 +27,7 @@ HTTP/1.1 200 OK
     <server-protocol>HTTP/1.0</server-protocol>
     <action-controller-request-request-parameters></action-controller-request-request-parameters>
     <server-addr>127.0.0.1</server-addr>
-    <http-host>community.tradeking.com</http-host>
+    <http-host>myapp.com</http-host>
     <rack-errors>#&lt;IO:0x2ad2cc818ea8&gt;</rack-errors>
     <script-name></script-name>
     <remote-addr>127.0.0.1</remote-addr>
@@ -41,13 +41,13 @@ HTTP/1.1 200 OK
     <http-true-client-ip>66.249.65.108</http-true-client-ip>
     <action_controller.request.path_parameters>
       <action>index</action>
-      <controller>trade_notes</controller>
+      <controller>notes</controller>
       <company-id>qek-la</company-id>
     </action_controller.request.path_parameters>
     <rack-multiprocess>true</rack-multiprocess>
     <http-x-akamai-config-log-detail>true</http-x-akamai-config-log-detail>
-    <request-uri>/company/qek-la/trade_notes</request-uri>
-    <document-root>/data/tradeking/current/public</document-root>
+    <request-uri>/notes</request-uri>
+    <document-root>/data/myapp/current/public</document-root>
     <server-port>81</server-port>
     <scgi>1</scgi>
     <passenger-app-type>rails</passenger-app-type>
@@ -85,114 +85,114 @@ HTTP/1.1 200 OK
     </data>
   </session>
   <request>
-    <rails-root>/data/tradeking/releases/20100520043505</rails-root>
-    <url>http://community.tradeking.com/company/qek-la/trade_notes</url>
+    <rails-root>/data/myapp/releases/20100520043505</rails-root>
+    <url>http://myapp.com/uri</url>
     <params>
       <action>index</action>
-      <controller>trade_notes</controller>
+      <controller>notes</controller>
       <company-id>qek-la</company-id>
     </params>
   </request>
   <backtrace>
-    <line>/data/tradeking/releases/20100520043505/app/helpers/application_helper.rb:47:in `posted_time_ago'</line>
-    <line>/data/tradeking/releases/20100520043505/app/views/trade_notes/_in_list.html.erb:54:in `_run_erb_app47views47trade_notes47_in_list46html46erb_locals_in_list_object_trade_note'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `send'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `render_without_trace_View___path__Rendering'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:306:in `with_template'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:30:in `render_without_trace_View___path__Rendering'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:20:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:30:in `benchmark'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:19:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/template.rb:205:in `render_template'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:44:in `render_partial_without_trace_View___path__Partial'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render_partial'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render_partial'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/partials.rb:184:in `render_partial'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:267:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/app/views/trade_notes/_trade_notes.html.erb:3:in `_run_erb_app47views47trade_notes47_trade_notes46html46erb_locals_object_trade_notes'</line>
-    <line>/data/tradeking/releases/20100520043505/app/views/trade_notes/_trade_notes.html.erb:1:in `each'</line>
-    <line>/data/tradeking/releases/20100520043505/app/views/trade_notes/_trade_notes.html.erb:1:in `_run_erb_app47views47trade_notes47_trade_notes46html46erb_locals_object_trade_notes'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `send'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `render_without_trace_View___path__Rendering'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:306:in `with_template'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:30:in `render_without_trace_View___path__Rendering'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:20:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:30:in `benchmark'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:19:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/template.rb:205:in `render_template'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:44:in `render_partial_without_trace_View___path__Partial'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render_partial'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render_partial'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/partials.rb:184:in `render_partial'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:267:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/app/views/trade_notes/index.html.erb:32:in `_run_erb_app47views47trade_notes47index46html46erb'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `send'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `render_without_trace_View___path__Rendering'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:306:in `with_template'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:30:in `render_without_trace_View___path__Rendering'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/template.rb:205:in `render_template'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:265:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:348:in `_render_with_layout'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:262:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:1250:in `render_for_file'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:945:in `render_without_benchmark'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:10:in `realtime'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'</line>
-    <line>/data/tradeking/releases/20100520043505/app/controllers/trade_notes_controller.rb:33:in `index'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `call'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `custom'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:175:in `call'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:175:in `respond'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:173:in `each'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:173:in `respond'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'</line>
-    <line>/data/tradeking/releases/20100520043505/app/controllers/trade_notes_controller.rb:32:in `index'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:1331:in `send'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:1331:in `perform_action_without_filters'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:638:in `run_before_filters'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:189:in `call'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:189:in `call'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:635:in `run_before_filters'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:615:in `call_filters'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:10:in `realtime'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/flash.rb:146:in `perform_action_without_newrelic_trace'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `send'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `process_without_filters'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:437:in `call'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:87:in `dispatch'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:121:in `_call'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'</line>
-    <line>/data/tradeking/releases/20100520043505/vendor/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'</line>
+    <line>/data/myapp/releases/20100520043505/app/helpers/application_helper.rb:47:in `posted_time_ago'</line>
+    <line>/data/myapp/releases/20100520043505/app/views/notes/_in_list.html.erb:54:in `_run_erb_app47views47notes47_in_list46html46erb_locals_in_list_object_note'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `send'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `render_without_trace_View___path__Rendering'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:306:in `with_template'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:30:in `render_without_trace_View___path__Rendering'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:20:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:30:in `benchmark'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:19:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/template.rb:205:in `render_template'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:44:in `render_partial_without_trace_View___path__Partial'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render_partial'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render_partial'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/partials.rb:184:in `render_partial'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:267:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/app/views/notes/_notes.html.erb:3:in `_run_erb_app47views47notes47_notes46html46erb_locals_object_notes'</line>
+    <line>/data/myapp/releases/20100520043505/app/views/notes/_notes.html.erb:1:in `each'</line>
+    <line>/data/myapp/releases/20100520043505/app/views/notes/_notes.html.erb:1:in `_run_erb_app47views47notes47_notes46html46erb_locals_object_notes'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `send'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `render_without_trace_View___path__Rendering'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:306:in `with_template'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:30:in `render_without_trace_View___path__Rendering'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:20:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:30:in `benchmark'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:19:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/template.rb:205:in `render_template'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable_partial.rb:44:in `render_partial_without_trace_View___path__Partial'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render_partial'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render_partial'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/partials.rb:184:in `render_partial'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:267:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/app/views/notes/index.html.erb:32:in `_run_erb_app47views47notes47index46html46erb'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `send'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:34:in `render_without_trace_View___path__Rendering'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:306:in `with_template'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/renderable.rb:30:in `render_without_trace_View___path__Rendering'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:161:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:160:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/template.rb:205:in `render_template'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:265:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:348:in `_render_with_layout'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_view/base.rb:262:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:1250:in `render_for_file'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:945:in `render_without_benchmark'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:10:in `realtime'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:51:in `render'</line>
+    <line>/data/myapp/releases/20100520043505/app/controllers/notes_controller.rb:33:in `index'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `call'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:135:in `custom'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:175:in `call'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:175:in `respond'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:173:in `each'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:173:in `respond'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/mime_responds.rb:107:in `respond_to'</line>
+    <line>/data/myapp/releases/20100520043505/app/controllers/notes_controller.rb:32:in `index'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:1331:in `send'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:1331:in `perform_action_without_filters'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:617:in `call_filters'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:638:in `run_before_filters'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:189:in `call'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:189:in `call'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:635:in `run_before_filters'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:615:in `call_filters'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:10:in `realtime'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/activesupport/lib/active_support/core_ext/benchmark.rb:17:in `ms'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/flash.rb:146:in `perform_action_without_newrelic_trace'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:138:in `perform_action'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:62:in `trace_method_execution_with_scope'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:122:in `perform_action'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/method_tracer.rb:38:in `trace_method_execution_no_scope'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/plugins/newrelic_rpm/lib/new_relic/agent/instrumentation/controller_instrumentation.rb:117:in `perform_action'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `send'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:532:in `process_without_filters'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/filters.rb:606:in `process'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:391:in `process'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/base.rb:386:in `call'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/routing/route_set.rb:437:in `call'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:87:in `dispatch'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:121:in `_call'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/rails/actionpack/lib/action_controller/string_coercion.rb:25:in `call'</line>
+    <line>/data/myapp/releases/20100520043505/vendor/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'</line>
   </backtrace>
 </notice>

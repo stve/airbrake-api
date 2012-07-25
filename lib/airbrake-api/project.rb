@@ -1,18 +1,19 @@
+require 'airbrake-api/base'
+
 module AirbrakeAPI
-  class Project < AirbrakeAPI::Base
+  class Project < Base
 
+    # @deprecated Please use {AirbrakeAPI::Client::projects} instead
     def self.find(*args)
-      setup
-      options = args.extract_options!
-
-      results = fetch(collection_path, options)
-
-      raise AirbrakeError.new(results.errors.error) if results.errors
-      results.projects.project
+      deprecate('Project.find has been deprecated; use AibrakeAPI::Client.projects instead')
+      options = args.last.is_a?(::Hash) ? args.pop : {}
+      AirbrakeAPI::Client.new.projects(options)
     end
 
+    # @deprecated Please use {AirbrakeAPI::Client::projects_path} instead
     def self.collection_path
-      '/data_api/v1/projects.xml'
+      deprecate('Project.collection_path has been deprecated; use AibrakeAPI::Client.projects_path instead')
+      AirbrakeAPI::Client.new.projects_path
     end
 
   end

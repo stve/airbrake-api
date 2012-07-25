@@ -4,9 +4,7 @@ describe AirbrakeAPI do
 
   context "configuration" do
     before(:each) do
-      AirbrakeAPI.account = nil
-      AirbrakeAPI.auth_token = nil
-      AirbrakeAPI.secure = false
+      AirbrakeAPI.reset
     end
 
     it "should allow setting of the account" do
@@ -36,6 +34,18 @@ describe AirbrakeAPI do
       AirbrakeAPI.account.should == 'anapp'
       AirbrakeAPI.account_path.should == 'https://anapp.airbrake.io'
     end
+
+    it 'takes a block' do
+      AirbrakeAPI.configure do |config|
+        config.account = 'anapp'
+        config.auth_token = 'abcdefghij'
+        config.secure = true
+      end
+
+      AirbrakeAPI.protocol.should == 'https'
+      AirbrakeAPI.auth_token.should == 'abcdefghij'
+      AirbrakeAPI.account.should == 'anapp'
+    end
   end
 
   context "when using SSL" do
@@ -53,6 +63,20 @@ describe AirbrakeAPI do
       lambda do
         AirbrakeAPI::Error.find(1696170)
       end.should raise_error(AirbrakeAPI::AirbrakeError)
+    end
+  end
+
+  describe '#options' do
+    it 'returns a Hash' do
+      AirbrakeAPI.options.should be_kind_of(Hash)
+    end
+
+    context 'when configured' do
+      it 'returns a Hash based on the configuration' do
+        AirbrakeAPI.configure(:account => 'anapp', :auth_token => 'abcdefg', :secure => true)
+
+        AirbrakeAPI.options[:auth_token].should eq('abcdefg')
+      end
     end
   end
 

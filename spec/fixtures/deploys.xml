@@ -1,0 +1,275 @@
+HTTP/1.1 200 OK
+
+<?xml version="1.0" encoding="UTF-8"?>
+<projects>
+  <deploy>
+    <id>3484129</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-11-11 19:35:29 UTC</created-at>
+    <ends-at>2011-11-18 00:48:22 UTC</ends-at>
+    <scm-revision>7d660b1f8518359e666d79f2ad9553719c93ca36</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>3447037</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-11-09 16:30:23 UTC</created-at>
+    <ends-at>2011-11-11 19:35:29 UTC</ends-at>
+    <scm-revision>071ec92f2873e0eec628b20787521f02e83401c5</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>3447025</id>
+    <project-id>12345</project-id>
+    <rails-env>staging</rails-env>
+    <created-at>2011-11-09 16:30:06 UTC</created-at>
+    <ends-at>2011-11-18 00:48:22 UTC</ends-at>
+    <scm-revision>071ec92f2873e0eec628b20787521f02e83401c5</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>3447009</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-11-09 16:29:50 UTC</created-at>
+    <ends-at>2011-11-18 00:48:22 UTC</ends-at>
+    <scm-revision>071ec92f2873e0eec628b20787521f02e83401c5</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>3342521</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-11-01 15:53:41 UTC</created-at>
+    <ends-at>2011-11-09 16:30:23 UTC</ends-at>
+    <scm-revision>91eff7dded6cd7d1a097a36f0df6b65407e79a76</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>3342493</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-11-01 15:52:34 UTC</created-at>
+    <ends-at>2011-11-01 15:53:41 UTC</ends-at>
+    <scm-revision>77740e3ed160edcc0fc22d1076295b975773efc4</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>3263641</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-10-25 21:15:38 UTC</created-at>
+    <ends-at>2011-11-01 15:52:34 UTC</ends-at>
+    <scm-revision>c625b6dcc96de7f9a1461ab4707f6833b9b6e5a9</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>3263293</id>
+    <project-id>12345</project-id>
+    <rails-env>staging</rails-env>
+    <created-at>2011-10-25 20:51:40 UTC</created-at>
+    <ends-at>2011-11-09 16:30:06 UTC</ends-at>
+    <scm-revision>7a39487cdb016da456afc8cb335202722dc72ee3</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>3261749</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-10-25 19:16:44 UTC</created-at>
+    <ends-at>2011-11-09 16:29:50 UTC</ends-at>
+    <scm-revision>7a39487cdb016da456afc8cb335202722dc72ee3</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>3261633</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-10-25 19:10:01 UTC</created-at>
+    <ends-at>2011-10-25 19:16:44 UTC</ends-at>
+    <scm-revision>48096996253edb7d109e98468252c32e6520eb37</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2988365</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-09-30 20:44:57 UTC</created-at>
+    <ends-at>2011-10-25 19:10:01 UTC</ends-at>
+    <scm-revision>67659600e67a3a8c83a4e4cac11f078dc06e1b07</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2988361</id>
+    <project-id>12345</project-id>
+    <rails-env>staging</rails-env>
+    <created-at>2011-09-30 20:44:43 UTC</created-at>
+    <ends-at>2011-10-25 20:51:40 UTC</ends-at>
+    <scm-revision>67659600e67a3a8c83a4e4cac11f078dc06e1b07</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2988349</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-09-30 20:44:26 UTC</created-at>
+    <ends-at>2011-10-25 21:15:38 UTC</ends-at>
+    <scm-revision>67659600e67a3a8c83a4e4cac11f078dc06e1b07</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2988145</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-09-30 20:32:25 UTC</created-at>
+    <ends-at>2011-09-30 20:44:26 UTC</ends-at>
+    <scm-revision>44410b4e6604b3e4c9307fe3552e6f3d2b185659</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2987953</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-09-30 20:19:01 UTC</created-at>
+    <ends-at>2011-09-30 20:32:25 UTC</ends-at>
+    <scm-revision>34b8c3c8a57584a6f86e7ad077a1c29070fa3811</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2987865</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-09-30 20:12:10 UTC</created-at>
+    <ends-at>2011-09-30 20:19:01 UTC</ends-at>
+    <scm-revision>28950c58b04b41729acc8d3d876b11c968c283a3</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2987845</id>
+    <project-id>12345</project-id>
+    <rails-env>staging</rails-env>
+    <created-at>2011-09-30 20:11:21 UTC</created-at>
+    <ends-at>2011-09-30 20:44:43 UTC</ends-at>
+    <scm-revision>28950c58b04b41729acc8d3d876b11c968c283a3</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2856825</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-09-28 12:36:26 UTC</created-at>
+    <ends-at>2011-09-30 20:44:57 UTC</ends-at>
+    <scm-revision>28950c58b04b41729acc8d3d876b11c968c283a3</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2735133</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-09-16 18:47:14 UTC</created-at>
+    <ends-at>2011-09-28 12:36:26 UTC</ends-at>
+    <scm-revision>28950c58b04b41729acc8d3d876b11c968c283a3</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2712305</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-09-15 03:04:45 UTC</created-at>
+    <ends-at>2011-09-16 18:47:14 UTC</ends-at>
+    <scm-revision>3aeacea4967b9d94cb7219166296f9a3639dc500</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>2514785</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-08-29 15:01:36 UTC</created-at>
+    <ends-at>2011-09-15 03:04:45 UTC</ends-at>
+    <scm-revision>2ad82bf3e1adc0bef25e2c58a1cb31053dc1a53e</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>1831461</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-07-11 17:22:12 UTC</created-at>
+    <ends-at>2011-09-30 20:12:10 UTC</ends-at>
+    <scm-revision>d792b6b64e8bc88de36775890daf3fc09c4efab9</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>1831305</id>
+    <project-id>12345</project-id>
+    <rails-env>staging</rails-env>
+    <created-at>2011-07-11 17:09:52 UTC</created-at>
+    <ends-at>2011-09-30 20:11:21 UTC</ends-at>
+    <scm-revision>d792b6b64e8bc88de36775890daf3fc09c4efab9</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>1829505</id>
+    <project-id>12345</project-id>
+    <rails-env>staging</rails-env>
+    <created-at>2011-07-11 14:56:38 UTC</created-at>
+    <ends-at>2011-07-11 17:09:52 UTC</ends-at>
+    <scm-revision>d792b6b64e8bc88de36775890daf3fc09c4efab9</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>1829285</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-07-11 14:40:32 UTC</created-at>
+    <ends-at>2011-08-29 15:01:36 UTC</ends-at>
+    <scm-revision>d792b6b64e8bc88de36775890daf3fc09c4efab9</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>1743121</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-07-01 02:52:54 UTC</created-at>
+    <ends-at>2011-07-11 17:22:12 UTC</ends-at>
+    <scm-revision>67d71fe0454dacccbdb93bfa8e1efbbc415c16db</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>1743113</id>
+    <project-id>12345</project-id>
+    <rails-env>staging</rails-env>
+    <created-at>2011-07-01 02:52:12 UTC</created-at>
+    <ends-at>2011-07-11 14:56:38 UTC</ends-at>
+    <scm-revision>7c922dd8e917c12db98bb81cfdb024f05e68b99a</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>1743109</id>
+    <project-id>12345</project-id>
+    <rails-env>development</rails-env>
+    <created-at>2011-07-01 02:51:53 UTC</created-at>
+    <ends-at>2011-07-11 14:40:32 UTC</ends-at>
+    <scm-revision>7c922dd8e917c12db98bb81cfdb024f05e68b99a</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+  <deploy>
+    <id>1740161</id>
+    <project-id>12345</project-id>
+    <rails-env>production</rails-env>
+    <created-at>2011-06-30 21:34:18 UTC</created-at>
+    <ends-at>2011-07-01 02:52:54 UTC</ends-at>
+    <scm-revision></scm-revision>
+    <scm-repository></scm-repository>
+  </deploy>
+  <deploy>
+    <id>1722985</id>
+    <project-id>12345</project-id>
+    <rails-env>staging</rails-env>
+    <created-at>2011-06-29 18:34:44 UTC</created-at>
+    <ends-at>2011-07-01 02:52:12 UTC</ends-at>
+    <scm-revision>b584a48bea9353c8950d76061d13acf1c564847e</scm-revision>
+    <scm-repository>git@github.com:account/project.git</scm-repository>
+  </deploy>
+</projects>
