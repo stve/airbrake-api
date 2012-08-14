@@ -80,4 +80,11 @@ describe AirbrakeAPI do
     end
   end
 
+  describe 'client delegation' do
+    it 'delegates to a client' do
+      error = AirbrakeAPI.error(1696170)
+      error.id.should == 1696170
+    end
+  end
+
 end
