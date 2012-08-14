@@ -174,6 +174,12 @@ describe AirbrakeAPI::Client do
         batches.map(&:size).should == [30,30]
       end
     end
+
+    describe '#connection' do
+      it 'returns a Faraday connection' do
+        @client.send(:connection).should be_kind_of(Faraday::Connection)
+      end
+    end
   end
 
   describe '#url_for' do
