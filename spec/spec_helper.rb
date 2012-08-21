@@ -28,7 +28,7 @@ end
 fixture_request :get, 'http://myapp.airbrake.io/errors.xml?auth_token=abcdefg123456', 'errors.xml'
 fixture_request :get, "http://myapp.airbrake.io/errors.xml?auth_token=abcdefg123456&page=2", 'paginated_errors.xml'
 fixture_request :get, "http://myapp.airbrake.io/errors/1696170.xml?auth_token=abcdefg123456", 'individual_error.xml'
-fixture_request :put, 'http://myapp.airbrake.io/errors/1696170.xml', 'update_error.xml'
+fixture_request :put, 'http://myapp.airbrake.io/errors/1696170?auth_token=abcdefg123456', 'update_error.xml'
 fixture_request :get, 'https://anapp.airbrake.io/errors/1696170.xml?auth_token=abcdefg', 'individual_error.xml'
 
 # notices

@@ -56,8 +56,12 @@ module AirbrakeAPI
 
     # errors
 
+    def unformatted_error_path(error_id)
+      "/errors/#{error_id}"
+    end
+
     def error_path(error_id)
-      "/errors/#{error_id}.xml"
+      "#{unformatted_error_path(error_id)}.xml"
     end
 
     def errors_path
@@ -65,7 +69,7 @@ module AirbrakeAPI
     end
 
     def update(error, options = {})
-      results = request(:put, error_path(error), :body => options)
+      results = request(:put, unformatted_error_path(error), options)
       results.group
     end
 
@@ -140,14 +144,12 @@ module AirbrakeAPI
       raise AirbrakeError.new('API Token cannot be nil') if @auth_token.nil?
       raise AirbrakeError.new('Account cannot be nil') if @account.nil?
 
-      params.merge!(:auth_token => @auth_token)
-
       response = connection(options).run_request(method, nil, nil, nil) do |request|
-        case method.to_sym
+        case method
         when :delete, :get
-          request.url(path, params)
+          request.url(path, params.merge(:auth_token => @auth_token))
         when :post, :put
-          request.path = path
+          request.url(path, :auth_token => @auth_token)
           request.body = params unless params.empty?
         end
       end
