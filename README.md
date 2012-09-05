@@ -51,6 +51,10 @@ Find *all* notices of an error:
 
     AirbrakeAPI.notices(error_id)
 
+Notices may be paginated.  If you don't want to retrieve all notices and merely want a specific page:
+
+    AirbrakeAPI.notices(error_id, :page => 3)
+
 Find an individual notice:
 
     AirbrakeAPI.notice(notice_id, error_id)
@@ -77,7 +81,7 @@ To retrieve a list of projects:
 
 ## Deployments
 
-To retrieve a list of deployments: 
+To retrieve a list of deployments:
 
     AirbrakeAPI.deployments
 
@@ -87,9 +91,9 @@ While module-based configuration will work in most cases, if you'd like to simul
 
     client = AirbrakeAPI::Client.new(:account => 'myaccount', :auth_token => 'abcdefg', :secure => true)
     altclient = AirbrakeAPI::Client.new(:account => 'anotheraccount', :auth_token => '123456789', :secure => false)
-    
+
     client.errors
-    
+
     altclient.projects
 
 ## Responses
