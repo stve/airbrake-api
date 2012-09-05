@@ -11,7 +11,7 @@ has lost it's ActiveRecord-like syntax for a more concise and simple API.  Inste
 of using classes such as `AirbrakeAPI::Error`, the entire API is contained within
 `AirbrakeAPI::Client`.
 
-The following classes are now deprecated:
+The following classes and their methods are now deprecated:
 
 * `AirbrakeAPI::Error`
 * `AirbrakeAPI::Notice`
@@ -32,6 +32,8 @@ or via a block:
       config.auth_token = 'abcdefg'
       config.secure = true
     end
+
+**Note:**  Airbrake's API utilizes a separate 'auth_token' than the API Key that is used to configure the Airbrake tracker.  Your 'auth_token' is found on the bottom of the user settings page.
 
 ## Finding Errors
 
