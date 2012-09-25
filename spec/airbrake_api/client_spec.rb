@@ -173,6 +173,12 @@ describe AirbrakeAPI::Client do
         notices.size.should == 60
         batches.map(&:size).should == [30,30]
       end
+
+      it "can return raw results" do
+        notices = @client.notices(1696170, :raw => true)
+        notices[0].line.should == nil
+        notices[0].id.should == 1234
+      end
     end
 
     describe '#connection' do

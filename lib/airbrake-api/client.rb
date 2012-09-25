@@ -116,8 +116,12 @@ module AirbrakeAPI
         options[:page] = page + page_count
         hash = request(:get, notices_path(error_id), options)
 
-        batch = Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
-          notice(notice_stub.id, error_id)
+        batch = if options[:raw]
+          hash.notices
+        else
+          Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
+            notice(notice_stub.id, error_id)
+          end
         end
         yield batch if block_given?
         batch.each{|n| notices << n }
