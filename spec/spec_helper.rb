@@ -9,8 +9,6 @@ end
 require 'rspec'
 require 'fakeweb'
 
-require 'active_support'
-require 'active_support/core_ext'
 require 'i18n'
 require 'airbrake'
 
