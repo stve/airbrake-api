@@ -98,28 +98,26 @@ module AirbrakeAPI
       hash.notice
     end
 
-    def notices(error_id, notice_options = {}, &block)
-      options     = {}
-      notices     = []
-      page        = notice_options[:page]
-      page_count  = 0
-
+    def notices(error_id, options = {}, &block)
       # a specific page is requested, only return that page
       # if no page is specified, start on page 1
-      if page
-        notice_options[:pages] = 1
+      if options[:page]
+        page = options[:page]
+        options[:pages] = 1
       else
         page = 1
       end
 
-      while !notice_options[:pages] || (page_count + 1) <= notice_options[:pages]
-        options[:page] = page + page_count
-        hash = request(:get, notices_path(error_id), options)
+      notices = []
+      page_count = 0
+      while !options[:pages] || (page_count + 1) <= options[:pages]
+        data = request(:get, notices_path(error_id), :page => page + page_count)
 
         batch = if options[:raw]
-          hash.notices
+          data.notices
         else
-          Parallel.map(hash.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
+          # get info like backtraces by doing another api call to notice
+          Parallel.map(data.notices, :in_threads => PARALLEL_WORKERS) do |notice_stub|
             notice(notice_stub.id, error_id)
           end
         end
