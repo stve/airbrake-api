@@ -157,6 +157,7 @@ describe AirbrakeAPI::Client do
       it "finds error notices for a specific page" do
         notices = @client.notices(1696170, :page => 1)
         notices.size.should == 30
+        notices.first.backtrace.should_not == nil
         notices.first.id.should == 1234
       end
 
@@ -176,8 +177,8 @@ describe AirbrakeAPI::Client do
 
       it "can return raw results" do
         notices = @client.notices(1696170, :raw => true)
-        notices[0].line.should == nil
-        notices[0].id.should == 1234
+        notices.first.backtrace.should == nil
+        notices.first.id.should == 1234
       end
     end
 
