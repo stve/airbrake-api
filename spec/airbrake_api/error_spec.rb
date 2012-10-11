@@ -8,11 +8,11 @@ describe AirbrakeAPI::Error do
   end
 
   it "should have correct collection path" do
-    AirbrakeAPI::Error.collection_path.should == "/errors.xml"
+    AirbrakeAPI::Error.collection_path.should == "/groups.xml"
   end
 
   it "should generate correct error path given an id" do
-    AirbrakeAPI::Error.error_path(1234).should == "/errors/1234.xml"
+    AirbrakeAPI::Error.error_path(1234).should == "/groups/1234.xml"
   end
 
   describe '.find' do
