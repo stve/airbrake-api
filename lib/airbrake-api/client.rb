@@ -57,7 +57,7 @@ module AirbrakeAPI
     # errors
 
     def unformatted_error_path(error_id)
-      "/errors/#{error_id}"
+      "/groups/#{error_id}"
     end
 
     def error_path(error_id)
@@ -65,7 +65,7 @@ module AirbrakeAPI
     end
 
     def errors_path
-      '/errors.xml'
+      '/groups.xml'
     end
 
     def update(error, options = {})
@@ -86,11 +86,11 @@ module AirbrakeAPI
     # notices
 
     def notice_path(notice_id, error_id)
-      "/errors/#{error_id}/notices/#{notice_id}.xml"
+      "/groups/#{error_id}/notices/#{notice_id}.xml"
     end
 
     def notices_path(error_id)
-      "/errors/#{error_id}/notices.xml"
+      "/groups/#{error_id}/notices.xml"
     end
 
     def notice(notice_id, error_id, options = {})

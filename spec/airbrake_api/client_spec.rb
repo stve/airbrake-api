@@ -206,19 +206,19 @@ describe AirbrakeAPI::Client do
     end
 
     it 'generates web urls for errors' do
-      @client.url_for(:errors).should eq('http://myapp.airbrake.io/errors')
+      @client.url_for(:errors).should eq('http://myapp.airbrake.io/groups')
     end
 
     it 'generates web urls for individual errors' do
-      @client.url_for(:error, 1696171).should eq('http://myapp.airbrake.io/errors/1696171')
+      @client.url_for(:error, 1696171).should eq('http://myapp.airbrake.io/groups/1696171')
     end
 
     it 'generates web urls for notices' do
-      @client.url_for(:notices, 1696171).should eq('http://myapp.airbrake.io/errors/1696171/notices')
+      @client.url_for(:notices, 1696171).should eq('http://myapp.airbrake.io/groups/1696171/notices')
     end
 
     it 'generates web urls for individual notices' do
-      @client.url_for(:notice, 123, 1696171).should eq('http://myapp.airbrake.io/errors/1696171/notices/123')
+      @client.url_for(:notice, 123, 1696171).should eq('http://myapp.airbrake.io/groups/1696171/notices/123')
     end
 
     it 'raises an exception when passed an unknown endpoint' do

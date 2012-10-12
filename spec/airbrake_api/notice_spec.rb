@@ -47,10 +47,10 @@ describe AirbrakeAPI::Notice do
   end
 
   it 'defines the notices path' do
-    AirbrakeAPI::Notice.all_path(1696170).should eq('/errors/1696170/notices.xml')
+    AirbrakeAPI::Notice.all_path(1696170).should eq('/groups/1696170/notices.xml')
   end
 
   it 'defines the an individual notices path' do
-    AirbrakeAPI::Notice.find_path(666, 1696170).should eq('/errors/1696170/notices/666.xml')
+    AirbrakeAPI::Notice.find_path(666, 1696170).should eq('/groups/1696170/notices/666.xml')
   end
 end
