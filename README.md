@@ -88,7 +88,7 @@ To retrieve a list of projects:
 
 To retrieve a list of deployments:
 
-    AirbrakeAPI.deployments
+    AirbrakeAPI.deploys(project_id)
 
 ## Connecting to more than one account
 
