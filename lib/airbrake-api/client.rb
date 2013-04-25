@@ -1,4 +1,5 @@
 require 'faraday_middleware'
+require 'parallel'
 require 'airbrake-api/core_ext/hash'
 require 'airbrake-api/middleware/scrub_response'
 require 'airbrake-api/middleware/raise_server_error'

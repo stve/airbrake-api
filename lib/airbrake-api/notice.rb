@@ -1,4 +1,3 @@
-require 'parallel'
 require 'airbrake-api/base'
 
 module AirbrakeAPI
