@@ -24,7 +24,7 @@ module AirbrakeAPI
       path = case endpoint.to_s
       when 'deploys' then deploys_path(*args)
       when 'projects' then '/projects'
-      when 'errors' then errors_path
+      when 'errors' then errors_path(*args)
       when 'error' then error_path(*args)
       when 'notices' then notices_path(*args)
       when 'notice' then notice_path(*args)
@@ -65,8 +65,8 @@ module AirbrakeAPI
       "#{unformatted_error_path(error_id)}.xml"
     end
 
-    def errors_path
-      '/groups.xml'
+    def errors_path(options={})
+      "#{options[:project_id] ? "/projects/#{options[:project_id]}" : nil}/groups.xml"
     end
 
     def update(error, options = {})
@@ -80,7 +80,9 @@ module AirbrakeAPI
     end
 
     def errors(options = {})
-      results = request(:get, errors_path, options)
+      options = options.dup
+      project_id = options.delete(:project_id)
+      results = request(:get, errors_path(:project_id => project_id), options)
       results.group || results.groups
     end
 

@@ -128,6 +128,11 @@ describe AirbrakeAPI::Client do
         ordered.should == errors
         errors.size.should == 2
       end
+
+      it "should use project_id for error path" do
+        @client.should_receive(:request).with(:get, "/projects/123/groups.xml", {}).and_return(stub(:group => 111))
+        @client.errors(:project_id => 123)
+      end
     end
 
     describe '#error' do
@@ -207,6 +212,10 @@ describe AirbrakeAPI::Client do
 
     it 'generates web urls for errors' do
       @client.url_for(:errors).should eq('http://myapp.airbrake.io/groups')
+    end
+
+    it 'generates web urls for errors with project_id' do
+      @client.url_for(:errors, :project_id => 123).should eq('http://myapp.airbrake.io/projects/123/groups')
     end
 
     it 'generates web urls for individual errors' do
