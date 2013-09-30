@@ -35,7 +35,8 @@ describe AirbrakeAPI::Client do
             :secure => true,
             :connection_options => {},
             :adapter => :em_http,
-            :user_agent => 'Airbrake API Tests'
+            :user_agent => 'Airbrake API Tests',
+            :middleware => AirbrakeAPI::Configuration::DEFAULT_MIDDLEWARE
           }
         end
 
@@ -59,6 +60,29 @@ describe AirbrakeAPI::Client do
             end
           end
         end
+      end
+    end
+
+    context 'with customized middleware' do
+      let(:logdev) { StringIO.new }
+      # Client#connection is a private method.
+      # Adding logger middleware component with an argument it should receive
+      # when a connection is initialized
+      let(:logger_middleware) { [Faraday::Response::Logger, Logger.new(logdev)] }
+      let(:options) do
+        {
+          :account => 'myapp', :auth_token => 'abcdefg123456', :secure => false,
+          :middleware => AirbrakeAPI::Configuration::DEFAULT_MIDDLEWARE + [logger_middleware]
+        }
+      end
+      let(:api) { AirbrakeAPI::Client.new(options) }
+
+      # request something to initialize @connection with middleware
+      before { api.projects }
+
+      it 'splats array to initialize middleware with arguments' do
+        # check that the logger added above did receive the argument
+        expect(logdev.string).to include(api.projects_path)
       end
     end
   end
