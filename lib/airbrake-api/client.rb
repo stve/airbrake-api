@@ -58,7 +58,7 @@ module AirbrakeAPI
     # errors
 
     def unformatted_error_path(error_id)
-      "/groups/#{error_id}"
+      "/errors/#{error_id}"
     end
 
     def error_path(error_id)
