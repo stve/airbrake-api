@@ -219,7 +219,7 @@ describe AirbrakeAPI::Client do
     end
 
     it 'generates web urls for individual errors' do
-      @client.url_for(:error, 1696171).should eq('http://myapp.airbrake.io/groups/1696171')
+      @client.url_for(:error, 1696171).should eq('http://myapp.airbrake.io/errors/1696171')
     end
 
     it 'generates web urls for notices' do

@@ -25,9 +25,9 @@ end
 # errors
 fixture_request :get, 'http://myapp.airbrake.io/groups.xml?auth_token=abcdefg123456', 'errors.xml'
 fixture_request :get, "http://myapp.airbrake.io/groups.xml?auth_token=abcdefg123456&page=2", 'paginated_errors.xml'
-fixture_request :get, "http://myapp.airbrake.io/groups/1696170.xml?auth_token=abcdefg123456", 'individual_error.xml'
-fixture_request :put, 'http://myapp.airbrake.io/groups/1696170?auth_token=abcdefg123456', 'update_error.xml'
-fixture_request :get, 'https://anapp.airbrake.io/groups/1696170.xml?auth_token=abcdefg', 'individual_error.xml'
+fixture_request :get, 'http://myapp.airbrake.io/errors/1696170.xml?auth_token=abcdefg123456', 'individual_error.xml'
+fixture_request :put, 'http://myapp.airbrake.io/errors/1696170?auth_token=abcdefg123456', 'update_error.xml'
+fixture_request :get, 'https://anapp.airbrake.io/errors/1696170.xml?auth_token=abcdefg', 'individual_error.xml'
 
 # notices
 fixture_request :get, "http://myapp.airbrake.io/groups/1696170/notices.xml?auth_token=abcdefg123456", 'notices.xml'
@@ -51,5 +51,5 @@ fixture_request :get, "http://myapp.airbrake.io/projects/12345/deploys.xml?auth_
 fixture_request :get, "http://myapp.airbrake.io/projects/67890/deploys.xml?auth_token=abcdefg123456", 'empty_deploys.xml'
 
 # ssl responses
-fixture_request :get, "https://sslapp.airbrake.io/groups/1696170.xml?auth_token=abcdefg123456", 'individual_error.xml'
-FakeWeb.register_uri(:get, "http://sslapp.airbrake.io/groups/1696170.xml?auth_token=abcdefg123456", DEFAULTS.merge(:body => " ", :status => ["403", "Forbidden"]))
+fixture_request :get, "https://sslapp.airbrake.io/errors/1696170.xml?auth_token=abcdefg123456", 'individual_error.xml'
+FakeWeb.register_uri(:get, "http://sslapp.airbrake.io/errors/1696170.xml?auth_token=abcdefg123456", DEFAULTS.merge(:body => " ", :status => ["403", "Forbidden"]))
