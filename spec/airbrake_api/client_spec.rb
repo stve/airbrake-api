@@ -130,7 +130,7 @@ describe AirbrakeAPI::Client do
       end
 
       it "should use project_id for error path" do
-        @client.should_receive(:request).with(:get, "/projects/123/groups.xml", {}).and_return(stub(:group => 111))
+        @client.should_receive(:request).with(:get, "/projects/123/groups.xml", {}).and_return(double(:group => 111))
         @client.errors(:project_id => 123)
       end
     end
