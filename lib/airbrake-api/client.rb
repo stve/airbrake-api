@@ -8,7 +8,7 @@ require 'airbrake-api/middleware/raise_response_error'
 module AirbrakeAPI
   class Client
 
-    PER_PAGE = 30
+    PER_PAGE = 20
     PARALLEL_WORKERS = 10
 
     attr_accessor *AirbrakeAPI::Configuration::VALID_OPTIONS_KEYS
