@@ -1,9 +1,5 @@
-require 'faraday_middleware'
 require 'parallel'
 require 'airbrake-api/core_ext/hash'
-require 'airbrake-api/middleware/scrub_response'
-require 'airbrake-api/middleware/raise_server_error'
-require 'airbrake-api/middleware/raise_response_error'
 
 module AirbrakeAPI
   class Client
@@ -171,12 +167,7 @@ module AirbrakeAPI
         :url => account_path,
       }
       @connection ||= Faraday.new(default_options.deep_merge(connection_options)) do |builder|
-        builder.use Faraday::Request::UrlEncoded
-        builder.use AirbrakeAPI::Middleware::RaiseResponseError
-        builder.use FaradayMiddleware::Mashify
-        builder.use FaradayMiddleware::ParseXml
-        builder.use AirbrakeAPI::Middleware::ScrubResponse
-        builder.use AirbrakeAPI::Middleware::RaiseServerError
+        middleware.each { |mw| builder.use *mw }
 
         builder.adapter adapter
       end
