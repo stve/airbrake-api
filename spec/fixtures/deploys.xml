@@ -1,7 +1,7 @@
 HTTP/1.1 200 OK
 
 <?xml version="1.0" encoding="UTF-8"?>
-<projects>
+<deploys>
   <deploy>
     <id>3484129</id>
     <project-id>12345</project-id>
@@ -272,4 +272,4 @@ HTTP/1.1 200 OK
     <scm-revision>b584a48bea9353c8950d76061d13acf1c564847e</scm-revision>
     <scm-repository>git@github.com:account/project.git</scm-repository>
   </deploy>
-</projects>
+</deploys>
