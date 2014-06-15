@@ -22,7 +22,7 @@ describe AirbrakeAPI::Client do
       it "should inherit module configuration" do
         api = AirbrakeAPI::Client.new
         @keys.each do |key|
-          api.send(key).should == key
+          expect(api.send(key)).to eq(key)
         end
       end
 
@@ -44,7 +44,7 @@ describe AirbrakeAPI::Client do
           it "should override module configuration" do
             api = AirbrakeAPI::Client.new(@configuration)
             @keys.each do |key|
-              api.send(key).should == @configuration[key]
+              expect(api.send(key)).to eq(@configuration[key])
             end
           end
         end
@@ -56,7 +56,7 @@ describe AirbrakeAPI::Client do
               api.send("#{key}=", value)
             end
             @keys.each do |key|
-              api.send(key).should == @configuration[key]
+              expect(api.send(key)).to eq(@configuration[key])
             end
           end
         end
@@ -103,38 +103,38 @@ describe AirbrakeAPI::Client do
 
     describe '#deploys' do
       it 'returns an array of deploys' do
-        @client.deploys('12345').should be_kind_of(Array)
+        expect(@client.deploys('12345')).to be_kind_of(Array)
       end
 
       it 'returns deploy data' do
         deploys = @client.deploys('12345')
         first_deploy = deploys.first
 
-        first_deploy.rails_env.should eq('production')
+        expect(first_deploy.rails_env).to eq('production')
       end
 
       it 'returns empty when no data' do
-        @client.deploys('67890').should be_kind_of(Array)
+        expect(@client.deploys('67890')).to be_kind_of(Array)
       end
     end
 
     describe '#projects' do
       it 'returns an array of projects' do
-        @client.projects.should be_kind_of(Array)
+        expect(@client.projects).to be_kind_of(Array)
       end
 
       it 'returns project data' do
         projects = @client.projects
-        projects.size.should == 4
-        projects.first.id.should == '1'
-        projects.first.name.should == 'Venkman'
+        expect(projects.size).to eq(4)
+        expect(projects.first.id).to eq('1')
+        expect(projects.first.name).to eq('Venkman')
       end
     end
 
     describe '#update' do
       it 'should update the status of an error' do
         error = @client.update(1696170, :group => { :resolved => true})
-        error.resolved.should be_true
+        expect(error.resolved).to be_truthy
       end
     end
 
@@ -142,19 +142,19 @@ describe AirbrakeAPI::Client do
       it "should find a page of the 30 most recent errors" do
         errors = @client.errors
         ordered = errors.sort_by(&:most_recent_notice_at).reverse
-        ordered.should == errors
-        errors.size.should == 30
+        expect(ordered).to eq(errors)
+        expect(errors.size).to eq(30)
       end
 
       it "should paginate errors" do
         errors = @client.errors(:page => 2)
         ordered = errors.sort_by(&:most_recent_notice_at).reverse
-        ordered.should == errors
-        errors.size.should == 2
+        expect(ordered).to eq(errors)
+        expect(errors.size).to eq(2)
       end
 
       it "should use project_id for error path" do
-        @client.should_receive(:request).with(:get, "/projects/123/groups.xml", {}).and_return(double(:group => 111))
+        expect(@client).to receive(:request).with(:get, "/projects/123/groups.xml", {}).and_return(double(:group => 111))
         @client.errors(:project_id => 123)
       end
     end
@@ -162,37 +162,37 @@ describe AirbrakeAPI::Client do
     describe '#error' do
       it "should find an individual error" do
         error = @client.error(1696170)
-        error.action.should == 'index'
-        error.id.should == 1696170
+        expect(error.action).to eq('index')
+        expect(error.id).to eq(1696170)
       end
     end
 
     describe '#notice' do
       it "finds individual notices" do
-        @client.notice(1234, 1696170).should_not be_nil
+        expect(@client.notice(1234, 1696170)).not_to be_nil
       end
 
       it "finds broken notices" do
-        @client.notice(666, 1696170).should_not be_nil
+        expect(@client.notice(666, 1696170)).not_to be_nil
       end
     end
 
     describe '#notices' do
       it "finds all error notices" do
         notices = @client.notices(1696170)
-        notices.size.should == 42
+        expect(notices.size).to eq(42)
       end
 
       it "finds error notices for a specific page" do
         notices = @client.notices(1696170, :page => 1)
-        notices.size.should == 30
-        notices.first.backtrace.should_not == nil
-        notices.first.id.should == 1234
+        expect(notices.size).to eq(30)
+        expect(notices.first.backtrace).not_to eq(nil)
+        expect(notices.first.id).to eq(1234)
       end
 
       it "finds all error notices with a page limit" do
         notices = @client.notices(1696171, :pages => 2)
-        notices.size.should == 60
+        expect(notices.size).to eq(60)
       end
 
       it "yields batches" do
@@ -200,20 +200,20 @@ describe AirbrakeAPI::Client do
         notices = @client.notices(1696171, :pages => 2) do |batch|
           batches << batch
         end
-        notices.size.should == 60
-        batches.map(&:size).should == [30,30]
+        expect(notices.size).to eq(60)
+        expect(batches.map(&:size)).to eq([30,30])
       end
 
       it "can return raw results" do
         notices = @client.notices(1696170, :raw => true)
-        notices.first.backtrace.should == nil
-        notices.first.id.should == 1234
+        expect(notices.first.backtrace).to eq(nil)
+        expect(notices.first.id).to eq(1234)
       end
     end
 
     describe '#connection' do
       it 'returns a Faraday connection' do
-        @client.send(:connection).should be_kind_of(Faraday::Connection)
+        expect(@client.send(:connection)).to be_kind_of(Faraday::Connection)
       end
     end
   end
@@ -227,35 +227,35 @@ describe AirbrakeAPI::Client do
     end
 
     it 'generates web urls for projects' do
-      @client.url_for(:projects).should eq('http://myapp.airbrake.io/projects')
+      expect(@client.url_for(:projects)).to eq('http://myapp.airbrake.io/projects')
     end
 
     it 'generates web urls for deploys' do
-      @client.url_for(:deploys, '2000').should eq('http://myapp.airbrake.io/projects/2000/deploys')
+      expect(@client.url_for(:deploys, '2000')).to eq('http://myapp.airbrake.io/projects/2000/deploys')
     end
 
     it 'generates web urls for errors' do
-      @client.url_for(:errors).should eq('http://myapp.airbrake.io/groups')
+      expect(@client.url_for(:errors)).to eq('http://myapp.airbrake.io/groups')
     end
 
     it 'generates web urls for errors with project_id' do
-      @client.url_for(:errors, :project_id => 123).should eq('http://myapp.airbrake.io/projects/123/groups')
+      expect(@client.url_for(:errors, :project_id => 123)).to eq('http://myapp.airbrake.io/projects/123/groups')
     end
 
     it 'generates web urls for individual errors' do
-      @client.url_for(:error, 1696171).should eq('http://myapp.airbrake.io/errors/1696171')
+      expect(@client.url_for(:error, 1696171)).to eq('http://myapp.airbrake.io/errors/1696171')
     end
 
     it 'generates web urls for notices' do
-      @client.url_for(:notices, 1696171).should eq('http://myapp.airbrake.io/groups/1696171/notices')
+      expect(@client.url_for(:notices, 1696171)).to eq('http://myapp.airbrake.io/groups/1696171/notices')
     end
 
     it 'generates web urls for individual notices' do
-      @client.url_for(:notice, 123, 1696171).should eq('http://myapp.airbrake.io/groups/1696171/notices/123')
+      expect(@client.url_for(:notice, 123, 1696171)).to eq('http://myapp.airbrake.io/groups/1696171/notices/123')
     end
 
     it 'raises an exception when passed an unknown endpoint' do
-      lambda { @client.url_for(:foo) }.should raise_error(ArgumentError)
+      expect { @client.url_for(:foo) }.to raise_error(ArgumentError)
     end
   end
 end

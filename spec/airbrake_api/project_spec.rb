@@ -8,14 +8,14 @@ describe AirbrakeAPI::Project do
   end
 
   it "should have correct projects path" do
-    AirbrakeAPI::Project.collection_path.should == "/data_api/v1/projects.xml"
+    expect(AirbrakeAPI::Project.collection_path).to eq("/data_api/v1/projects.xml")
   end
 
   it "should find projects" do
     projects = AirbrakeAPI::Project.find(:all)
-    projects.size.should == 4
-    projects.first.id.should == '1'
-    projects.first.name.should == 'Venkman'
+    expect(projects.size).to eq(4)
+    expect(projects.first.id).to eq('1')
+    expect(projects.first.name).to eq('Venkman')
   end
 
 end

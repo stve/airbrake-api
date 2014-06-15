@@ -9,30 +9,30 @@ describe AirbrakeAPI do
 
     it "should allow setting of the account" do
       AirbrakeAPI.account = 'myapp'
-      AirbrakeAPI.account.should == 'myapp'
-      AirbrakeAPI.account_path.should == 'http://myapp.airbrake.io'
+      expect(AirbrakeAPI.account).to eq('myapp')
+      expect(AirbrakeAPI.account_path).to eq('http://myapp.airbrake.io')
     end
 
     it "should allow setting of the auth token" do
       AirbrakeAPI.auth_token = '123456'
-      AirbrakeAPI.auth_token.should == '123456'
+      expect(AirbrakeAPI.auth_token).to eq('123456')
     end
 
     it "should allow setting of ssl protocol" do
       AirbrakeAPI.secure = true
-      AirbrakeAPI.protocol.should == 'https'
+      expect(AirbrakeAPI.protocol).to eq('https')
     end
 
     it "should default to standard http" do
-      AirbrakeAPI.protocol.should == 'http'
+      expect(AirbrakeAPI.protocol).to eq('http')
     end
 
     it "should should implement #configure" do
       AirbrakeAPI.configure(:account => 'anapp', :auth_token => 'abcdefg', :secure => true)
-      AirbrakeAPI.protocol.should == 'https'
-      AirbrakeAPI.auth_token.should == 'abcdefg'
-      AirbrakeAPI.account.should == 'anapp'
-      AirbrakeAPI.account_path.should == 'https://anapp.airbrake.io'
+      expect(AirbrakeAPI.protocol).to eq('https')
+      expect(AirbrakeAPI.auth_token).to eq('abcdefg')
+      expect(AirbrakeAPI.account).to eq('anapp')
+      expect(AirbrakeAPI.account_path).to eq('https://anapp.airbrake.io')
     end
 
     it 'takes a block' do
@@ -42,9 +42,9 @@ describe AirbrakeAPI do
         config.secure = true
       end
 
-      AirbrakeAPI.protocol.should == 'https'
-      AirbrakeAPI.auth_token.should == 'abcdefghij'
-      AirbrakeAPI.account.should == 'anapp'
+      expect(AirbrakeAPI.protocol).to eq('https')
+      expect(AirbrakeAPI.auth_token).to eq('abcdefghij')
+      expect(AirbrakeAPI.account).to eq('anapp')
     end
   end
 
@@ -55,27 +55,27 @@ describe AirbrakeAPI do
 
     it "should find an error if account is SSL enabled" do
       error = AirbrakeAPI::Error.find(1696170)
-      error.id.should == 1696170
+      expect(error.id).to eq(1696170)
     end
 
     it "should raise an exception if trying to access SSL enabled account with unsecure connection" do
       AirbrakeAPI.secure = false
-      lambda do
+      expect do
         AirbrakeAPI::Error.find(1696170)
-      end.should raise_error(AirbrakeAPI::AirbrakeError)
+      end.to raise_error(AirbrakeAPI::AirbrakeError)
     end
   end
 
   describe '#options' do
     it 'returns a Hash' do
-      AirbrakeAPI.options.should be_kind_of(Hash)
+      expect(AirbrakeAPI.options).to be_kind_of(Hash)
     end
 
     context 'when configured' do
       it 'returns a Hash based on the configuration' do
         AirbrakeAPI.configure(:account => 'anapp', :auth_token => 'abcdefg', :secure => true)
 
-        AirbrakeAPI.options[:auth_token].should eq('abcdefg')
+        expect(AirbrakeAPI.options[:auth_token]).to eq('abcdefg')
       end
     end
   end
@@ -83,7 +83,7 @@ describe AirbrakeAPI do
   describe 'client delegation' do
     it 'delegates to a client' do
       error = AirbrakeAPI.error(1696170)
-      error.id.should == 1696170
+      expect(error.id).to eq(1696170)
     end
   end
 
