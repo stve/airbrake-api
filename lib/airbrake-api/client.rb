@@ -34,7 +34,7 @@ module AirbrakeAPI
 
     def deploys(project_id, options = {})
       results = request(:get, deploys_path(project_id), options)
-      results.projects.respond_to?(:deploy) ? results.projects.deploy : []
+      results.deploys.respond_to?(:deploy) ? results.deploys.deploy : []
     end
 
     def deploys_path(project_id)
