@@ -9,7 +9,7 @@ platforms :jruby do
 end
 
 group :test do
-  gem 'rspec'
+  gem 'rspec', '~> 3.0'
   gem 'simplecov'
   gem 'fakeweb'
   gem 'nokogiri'
