@@ -1,7 +1,7 @@
-# Airbrake API [![Build Status](https://secure.travis-ci.org/spagalloco/airbrake-api.png?branch=master)][travis] [![Dependency Status](https://gemnasium.com/spagalloco/airbrake-api.png?travis)][gemnasium]
+# Airbrake API [![Build Status](https://secure.travis-ci.org/stve/airbrake-api.png?branch=master)][travis] [![Dependency Status](https://gemnasium.com/stve/airbrake-api.png?travis)][gemnasium]
 
-[travis]: http://travis-ci.org/spagalloco/airbrake-api
-[gemnasium]: https://gemnasium.com/spagalloco/airbrake-api
+[travis]: http://travis-ci.org/stve/airbrake-api
+[gemnasium]: https://gemnasium.com/stve/airbrake-api
 
 A ruby client for the [Airbrake API](http://help.airbrake.io/kb/api-2/api-overview)
 
